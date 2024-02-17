@@ -4,21 +4,22 @@
 
 <header class="w-full h-[100px] bg-transparent flex justify-center items-center fixed">
   <ul class="w-full h-[50px] list-none flex justify-center items-center p-0 relative">
-    <li class="w-[25%] flex justify-center bg-graysmooth  rounded-xl">
+    <li class="w-[25%] h-full flex justify-center bg-graysmooth  rounded-xl
+    transition-all hover:bg-boldsea3">
       <a class="p-[12px] no-underline text-lightsea w-full text-center
-      transition-all .2s ease-in-out hover:font-bold hover:text-boldsea" href="#">Inicio</a>
+      transition-all ease-in-out hover:font-bold hover:text-boldsea" href="#">Inicio</a>
 
       <a class="p-[12px] no-underline text-lightsea w-full text-center
-      transition-all .2s ease-in-out hover:font-bold hover:text-boldsea" href="#">Proyectos</a>
+      transition-all ease-in-out hover:font-bold hover:text-boldsea" href="#">Proyectos</a>
 
       <a class="p-[12px] no-underline text-lightsea w-full text-center
-      transition-all .2s ease-in-out hover:font-bold hover:text-boldsea" href="#">Sobre mi</a>
+      transition-all ease-in-out hover:font-bold hover:text-boldsea" href="#">Sobre mi</a>
       
       <a class="p-[12px] no-underline text-lightsea w-full text-center
-      transition-all .2s ease-in-out hover:font-bold hover:text-boldsea" href="#">Contacto</a>
+      transition-all ease-in-out hover:font-bold hover:text-boldsea" href="#">Contacto</a>
     </li>
-    <li class="w-[140px] h-full flex justify-center items-center bg-lightsea rounded-xl absolute right-6
-    transition-all duration-500 ease-in-out hover:bg-boldsea group">
+    <li class="w-[140px] h-full flex justify-center items-center bg-graysmooth2 rounded-xl absolute right-6
+    transition-all duration-500 ease-in-out hover:bg-boldsea2 group">
       <img class="w-[60%] h-[60%]" src="moon-filled.svg" alt="">
       <button class="w-[60%] h-[50%] bg-ocean rounded-lg relative z-10 ">
         <span class="w-[15px] h-[15px] absolute left-1 top-[5px] rounded-sm bg-lightsea z-20 
@@ -29,4 +30,29 @@
     </li>
     
   </ul>
+  <div id="backdrop" style=" border-radius: 6px; position: absolute; background-color: rgba(86, 86, 253, .15); left: 0; top: 0; width: 0; height: 0; transition: all .6s ease-out; overflow: hidden; opacity: 0; z-index: -10;"></div>
 </header>
+
+<script>
+  const listOfItems = document.querySelectorAll('a')
+
+  listOfItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const { left, top, width, height } = item.getBoundingClientRect();
+      const backdrop = document.querySelector('#backdrop') as HTMLElement;
+
+      backdrop.style.left = `${left}px`;
+      backdrop.style.top = `${top}px`;
+      backdrop.style.width = `${width}px`;
+      backdrop.style.height = `${height}px`;
+      backdrop.style.opacity = '1';
+      backdrop.style.overflow = 'visible';
+    });
+
+    item.addEventListener('mouseleave', () => {
+      const backdrop = document.querySelector('#backdrop') as HTMLElement;
+      backdrop.style.opacity = '0';
+      backdrop.style.overflow = 'hidden';
+    });
+  });
+</script>
