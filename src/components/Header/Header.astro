@@ -7,7 +7,7 @@
   @keyframes blurIt {
     to {
       background-color: rgba(86, 86, 253, .3);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(6px);
       color: black;
     }
   }
@@ -19,12 +19,12 @@
   .animate-blurIt {
     animation: blurIt linear both;
     animation-timeline: scroll(root block);
-    animation-range: 0 250px;
+    animation-range: 0 200px;
   }
   .animate-text {
     animation: changeColor linear both;
     animation-timeline: scroll(root block);
-    animation-range: 0 250px;
+    animation-range: 0 200px;
   }
 </style>
 
@@ -55,7 +55,7 @@
     </li>
     
   </ul>
-  <div id="backdrop" style=" border-radius: 6px; position: absolute; background-color: rgba(86, 86, 253, .05); left: 0; top: 0; width: 0; height: 0; transition: all .6s ease-out; overflow: hidden; opacity: 0; z-index: -10;"></div>
+  <div id="backdrop" style=" border-radius: 6px; position: absolute; background-color: #D069FF14; left: 0; top: 0; width: 0; height: 0; transition: all .6s ease-out; overflow: hidden; opacity: 0; z-index: -10;"></div>
 </header>
 
 <script>
