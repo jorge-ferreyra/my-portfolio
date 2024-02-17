@@ -11,7 +11,9 @@ export default {
 			lightsea: 'rgb(148, 148, 255)',
 			boldsea: 'rgb(86, 86, 253)',
 			boldsea2: 'rgba(86, 86, 253, .15)',
-			boldsea3: 'rgba(86, 86, 253, .05)'
+			boldsea3: 'rgba(86, 86, 253, .05)',
+			white: 'rgba(255, 255, 255)',
+			fontblue: 'rgb(125, 144, 255)'
 		},
 		extend: {}
 	},
