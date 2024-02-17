@@ -2,21 +2,46 @@
 
 ---
 
+
+<style>
+  @keyframes blurIt {
+    to {
+      background-color: rgba(86, 86, 253, .3);
+      backdrop-filter: blur(8px);
+      color: black;
+    }
+  }
+  @keyframes changeColor {
+    to {
+      color: rgb(0, 0, 18);
+    }
+  }
+  .animate-blurIt {
+    animation: blurIt linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 250px;
+  }
+  .animate-text {
+    animation: changeColor linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 250px;
+  }
+</style>
+
 <header class="w-full h-[100px] bg-transparent flex justify-center items-center fixed">
   <ul class="w-full h-[50px] list-none flex justify-center items-center p-0 relative">
-    <li class="w-[25%] h-full flex justify-center bg-graysmooth  rounded-xl
-    transition-all hover:bg-boldsea3">
+    <li class="w-1/4 h-full flex justify-center bg-graysmooth rounded-xl hover:bg-boldsea3 animate-blurIt">
       <a class="p-[12px] no-underline text-lightsea w-full text-center
-      transition-all ease-in-out hover:font-bold hover:text-boldsea" href="#">Inicio</a>
+      transition-all ease-in-out hover:font-bold hover:text-boldsea animate-text" href="#">Inicio</a>
 
       <a class="p-[12px] no-underline text-lightsea w-full text-center
-      transition-all ease-in-out hover:font-bold hover:text-boldsea" href="#">Proyectos</a>
+      transition-all ease-in-out hover:font-bold hover:text-boldsea animate-text" href="#">Proyectos</a>
 
       <a class="p-[12px] no-underline text-lightsea w-full text-center
-      transition-all ease-in-out hover:font-bold hover:text-boldsea" href="#">Sobre mi</a>
+      transition-all ease-in-out hover:font-bold hover:text-boldsea animate-text" href="#">Sobre mi</a>
       
       <a class="p-[12px] no-underline text-lightsea w-full text-center
-      transition-all ease-in-out hover:font-bold hover:text-boldsea" href="#">Contacto</a>
+      transition-all ease-in-out hover:font-bold hover:text-boldsea animate-text" href="#">Contacto</a>
     </li>
     <li class="w-[140px] h-full flex justify-center items-center bg-graysmooth2 rounded-xl absolute right-6
     transition-all duration-500 ease-in-out hover:bg-boldsea2 group">
