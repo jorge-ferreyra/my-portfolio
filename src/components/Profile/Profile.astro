@@ -11,19 +11,22 @@ import Socialbox from './Socialbox.astro'
   }
 </style>
 
-<section class="w-[100%] h-[450px] bg-graysmooth mt-[250px] rounded-lg
-secondq:h-[380px] thirdq:h-[350px] thirdq:mt-[200px] fourthq:mt-[180px] fourthq:h-[280px] mobile:mt-[160px]">
+<section class="w-[100%] h-[400px] bg-graysmooth mt-[250px] rounded-lg
+secondq:h-[380px] thirdq:h-[350px] thirdq:mt-[200px] fourthq:mt-[180px] fourthq:h-[280px] mobile:mt-[160px]
+mobile:h-[370px]">
   <div class="w-[100%] h-[100%] flex items-center gap-[32px] p-[32px]
-  thirdq:gap-[24px] fourthq:gap-[14px] fourthq:p-[14px]">
+  thirdq:gap-[24px] fourthq:gap-[14px] fourthq:p-[14px]
+  mobile:flex-col">
     <picture class="w-[30%]
     fourthq:w-[40%]">
       <img class="w-[100%] rounded-[50%] border-solid border-[1px] border-boldsea" src={'profile-img.jpg'} alt="">
     </picture>
-    <article class="w-[70%] text-white flex flex-col ">
+    <article class="w-[70%] text-white flex flex-col 
+    mobile:w-[100%]">
       <h1 class="w-[97%] text-[50px] font-bold mb-3 border-b border-boldsea2
-      secondq:text-[38px] thirdq:text-[30px] fourthq:text-[20px] mobile:text-[15px]">¡Hola!, Soy <span class="text-fontblue font-bold">Jorge Ferreyra</span></h1>
+      secondq:text-[38px] secondq:mb-2 thirdq:text-[30px] fourthq:text-[20px] mobile:text-[15px]">¡Hola!, Soy <span class="text-fontblue font-bold">Jorge Ferreyra</span></h1>
       <div class="flex items-center mb-6 gap-3
-      thirdq:mb-3 mobile:mb-2">
+       secondq:mb-3 thirdq:mb-3 mobile:mb-2">
         <h2 class="font-bold text-[30px] text-purpleoctopus
         thirdq:text-[20px] fourthq:text-[14px] mobile:text-[11px]">Desarrollador web</h2>
         <a class="flex items-center gap-1  bg-greendark rounded-[4px] p-[2px] opacity-[.7] z-10 cursor-pointer
@@ -37,17 +40,23 @@ secondq:h-[380px] thirdq:h-[350px] thirdq:mt-[200px] fourthq:mt-[180px] fourthq:
       <p class="text-[16px] leading-6
       thirdq:text-[15px] fourthq:text-[12px] fourthq:leading-4 mobile:text-[10px]">Soy un estudiante de programación en la <span class="text-fontblue">Universidad Tecnológica Nacional</span>, me encanta el desarrollo web y crear las mejores experiencias para los usuarios. <br>
       Disfruto de programar tanto en el Frontend como el Backend, y de moldear productos que sean capaces de tener un impacto positivo en las personas.</p>
-      <ul class="w-[100%] h-[50px] flex items-center justify-end gap-[14px] mt-[22px] pr-[12px]">
-        <li class="w-[180px] h-[100%] flex items-center relative">
-          <a class="z-[2] w-[100%] h-[60%] p-2 flex justify-center bg-black items-center rounded-lg absolute" href="">
+      <ul class="w-[100%] h-[50px] flex items-center justify-end gap-[14px] mt-[22px] pr-[12px]
+      secondq:mt-[0] secondq:pr-[0] thirdq:pr-[4px] fourthq:pr-[3px]
+      mobile:pr-[7px]">
+        <li class="w-[180px] h-[100%] flex items-center relative
+        thirdq:w-[160px] fourthq:w-[130px]">
+          <a class="z-[2] w-[100%] h-[60%] p-2 flex justify-center bg-black items-center rounded-lg absolute
+          thirdq:text-[14px] fourthq:text-[10px]" href="">
             ¡Descarga mi CV! 
-            <img class="z-[10] w-[28px] h-[28px] ml-[10px]" src="file-cv.svg" alt="">
+            <img class="z-[10] w-[28px] h-[28px] ml-[10px]
+            fourthq:w-[22px] fourthq:h-[22px] fourthq:ml-[8px]" src="file-cv.svg" alt="">
           </a>
-          <div class="z-[3] opacity-0 w-[100%] h-[60%] p-2 flex justify-center bg-gradient-to-r from-boldsea to-purpleoctopus items-center rounded-lg absolute transition-all duration-1000 ease-out hover:opacity-100 hover:border-[1px] hover:border-solid hover:border-crimson cursor-pointer">
+          <div class="z-[3] opacity-0 w-[100%] h-[60%] p-2 flex justify-center bg-gradient-to-r from-boldsea to-purpleoctopus items-center rounded-lg absolute transition-all duration-1000 ease-out hover:opacity-100 hover:border-[1px] hover:border-solid hover:border-crimson cursor-pointer
+          thirdq:text-[14px] fourthq:text-[10px]">
             ¡Descarga mi CV!
-            <img class="z-[10] w-[28px] h-[28px] ml-[10px]" src="file-cv.svg" alt="">
+            <img class="z-[10] w-[28px] h-[28px] ml-[10px]
+            fourthq:w-[22px] fourthq:h-[22px] fourthq:ml-[8px]" src="file-cv.svg" alt="">
           </div>
-          
         </li>
         <Socialbox svgWhite="github.svg" svgColor='github-color.svg' link='https://github.com/jorge-ferreyra' />
         <Socialbox svgWhite='linkedin.svg' svgColor='linkedin-color.svg' link='https://www.linkedin.com/in/jorge-ferreyra-' />

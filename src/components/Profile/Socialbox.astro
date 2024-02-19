@@ -10,7 +10,8 @@ const { svgWhite, svgColor, link }= Astro.props
 ---
 
 <li class="list-none">
-  <a class="w-[32px] h-[32px] flex items-center relative" href={link} target="blank">
+  <a class="w-[32px] h-[32px] flex items-center relative
+  fourthq:w-[22px] fourthq:h-[22px]" href={link} target="blank">
     <img class="w-[100%] absolute z-[2] transition-all duration-500 ease-out hover:opacity-0" src={svgWhite} alt="">
     <img class="w-[100%] absolute z-[1]" src={svgColor} alt="">
   </a>
