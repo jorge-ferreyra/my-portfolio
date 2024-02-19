@@ -2,6 +2,13 @@
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
+		screens: {
+			firstq: {'max': '1445px'},
+			secondq: {'max': '1250px'},
+			thirdq: {'max': '935px'},
+			fourthq: {'max': '750px'},
+			mobile: {'max': '385px'}
+		},
 		colors: {
 			ocean: 'rgb(2, 0, 19)',
 			blackmatter: 'rgb(1, 0, 10)',
