@@ -27,10 +27,7 @@ export default {
 			boldsea2: 'rgba(86, 86, 253, .15)',
 			boldsea3: 'rgba(86, 86, 253, .05)',
 			white: 'rgba(255, 255, 255)',
-			fontblue: 'rgb(125, 144, 255)',
-			customgradient: {
-				'50': 'linear-gradient(to right, #ffffff, #000000)',
-			},
+			fontblue: 'rgb(125, 144, 255)'
 		},
 		extend: {}
 	},
