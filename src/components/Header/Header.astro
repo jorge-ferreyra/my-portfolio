@@ -28,7 +28,7 @@
   }
 </style>
 
-<header class="w-full h-[100px] bg-transparent flex justify-center items-center fixed">
+<header class="w-full h-[100px] bg-transparent flex justify-center items-center fixed z-30">
   <ul class="w-full h-[50px] list-none flex justify-center items-center p-0 relative">
     <li class="w-1/4 h-full flex justify-center bg-graysmooth rounded-xl hover:bg-boldsea3 animate-blurIt">
       <a class="p-[12px] no-underline text-lightsea w-full text-center
@@ -59,7 +59,7 @@
 </header>
 
 <script>
-  const listOfItems = document.querySelectorAll('a')
+  const listOfItems = document.querySelectorAll('li a')
   const backdrop = document.querySelector('#backdrop') as HTMLElement;
   listOfItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
