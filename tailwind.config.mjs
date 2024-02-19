@@ -10,6 +10,7 @@ export default {
 			mobile: {'max': '385px'}
 		},
 		colors: {
+			black: 'rgb(0, 0, 0)',
 			ocean: 'rgb(2, 0, 19)',
 			blackmatter: 'rgb(1, 0, 10)',
 			transparent: 'transparent',
@@ -26,7 +27,10 @@ export default {
 			boldsea2: 'rgba(86, 86, 253, .15)',
 			boldsea3: 'rgba(86, 86, 253, .05)',
 			white: 'rgba(255, 255, 255)',
-			fontblue: 'rgb(125, 144, 255)'
+			fontblue: 'rgb(125, 144, 255)',
+			customgradient: {
+				'50': 'linear-gradient(to right, #ffffff, #000000)',
+			},
 		},
 		extend: {}
 	},
