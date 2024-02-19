@@ -17,6 +17,7 @@ export default {
 			graysmooth2: 'rgba(255, 255, 255, .04)',
 			graysmooth3: 'rgba(255, 255, 255, .2)',
 			crimson: '#FF5D59',
+			magicrose: '#D069FF14',
 			purpleoctopus: '#8759FF',
 			greenlight: '#59FF8F',
 			greendark: '#266D3E',
