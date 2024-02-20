@@ -12,8 +12,8 @@ import Socialbox from './Socialbox.astro'
 </style>
 
 <section class="w-[100%] h-[400px] bg-graysmooth mt-[250px] rounded-lg
-secondq:h-[380px] thirdq:h-[350px] thirdq:mt-[200px] fourthq:mt-[180px] fourthq:h-[280px] mobile:mt-[160px]
-mobile:h-[370px]">
+firstq:mt-[150px] secondq:h-[380px] thirdq:h-[350px]  fourthq:mt-[180px] fourthq:h-[280px]
+mobile:mt-[130px] mobile:h-[370px]">
   <div class="w-[100%] h-[100%] flex items-center gap-[32px] p-[32px]
   thirdq:gap-[24px] fourthq:gap-[14px] fourthq:p-[14px]
   mobile:flex-col">
@@ -41,22 +41,18 @@ mobile:h-[370px]">
       thirdq:text-[15px] fourthq:text-[12px] fourthq:leading-4 mobile:text-[10px]">Soy un estudiante de programación en la <span class="text-fontblue">Universidad Tecnológica Nacional</span>, me encanta el desarrollo web y crear las mejores experiencias para los usuarios. <br>
       Disfruto de programar tanto en el Frontend como el Backend, y de moldear productos que sean capaces de tener un impacto positivo en las personas.</p>
       <ul class="w-[100%] h-[50px] flex items-center justify-end gap-[14px] mt-[22px] pr-[12px]
-      secondq:mt-[0] secondq:pr-[0] thirdq:pr-[4px] fourthq:pr-[3px]
+      secondq:mt-[0px] secondq:pr-[0] thirdq:pr-[4px] thirdq:mt-[5px] fourthq:pr-[3px] fourthq:mt-[2px]
       mobile:pr-[7px]">
         <li class="w-[180px] h-[100%] flex items-center relative
         thirdq:w-[160px] fourthq:w-[130px]">
           <a class="z-[2] w-[100%] h-[60%] p-2 flex justify-center bg-black items-center rounded-lg absolute
-          thirdq:text-[14px] fourthq:text-[10px]" href="">
-            ¡Descarga mi CV! 
-            <img class="z-[10] w-[28px] h-[28px] ml-[10px]
+          before:content-[''] before:bg-gradient-to-r before:from-boldsea before:to-purpleoctopus before:w-[100%] before:h-[100%] 
+          before:absolute before:rounded-lg before:hover:opacity-0 before:transition-all before:duration-1000 before:ease-out
+          thirdq:text-[14px] fourthq:text-[10px]" href="Curriculum-Vitae.pdf" download>
+            <p class="z-[3]">¡Descarga mi CV! </p>
+            <img class="z-[3] w-[28px] h-[28px] ml-[10px]
             fourthq:w-[22px] fourthq:h-[22px] fourthq:ml-[8px]" src="file-cv.svg" alt="">
           </a>
-          <div class="z-[3] opacity-0 w-[100%] h-[60%] p-2 flex justify-center bg-gradient-to-r from-boldsea to-purpleoctopus items-center rounded-lg absolute transition-all duration-1000 ease-out hover:opacity-100 hover:border-[1px] hover:border-solid hover:border-crimson cursor-pointer
-          thirdq:text-[14px] fourthq:text-[10px]">
-            ¡Descarga mi CV!
-            <img class="z-[10] w-[28px] h-[28px] ml-[10px]
-            fourthq:w-[22px] fourthq:h-[22px] fourthq:ml-[8px]" src="file-cv.svg" alt="">
-          </div>
         </li>
         <Socialbox svgWhite="github.svg" svgColor='github-color.svg' link='https://github.com/jorge-ferreyra' />
         <Socialbox svgWhite='linkedin.svg' svgColor='linkedin-color.svg' link='https://www.linkedin.com/in/jorge-ferreyra-' />

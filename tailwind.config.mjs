@@ -7,7 +7,7 @@ export default {
 			secondq: {'max': '1250px'},
 			thirdq: {'max': '935px'},
 			fourthq: {'max': '750px'},
-			mobile: {'max': '385px'}
+			mobile: {'max': '500px'}
 		},
 		colors: {
 			black: 'rgb(0, 0, 0)',
