@@ -10,6 +10,7 @@ export default {
 			mobile: {'max': '500px'}
 		},
 		colors: {
+			puregray: 'rgb(6, 4, 18)',
 			black: 'rgb(0, 0, 0)',
 			ocean: 'rgb(2, 0, 19)',
 			blackmatter: 'rgb(1, 0, 10)',
@@ -27,7 +28,8 @@ export default {
 			boldsea2: 'rgba(86, 86, 253, .15)',
 			boldsea3: 'rgba(86, 86, 253, .05)',
 			white: 'rgba(255, 255, 255)',
-			fontblue: 'rgb(125, 144, 255)'
+			fontblue: 'rgb(125, 144, 255)',
+			fontbluelight: 'rgb(186, 196, 255)'
 		},
 		extend: {}
 	},
