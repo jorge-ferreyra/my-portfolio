@@ -4,28 +4,37 @@ interface Props {
   title: string,
   img: string,
   link: string,
-  description: string
+  description: string,
+  repository: string,
+  difference: boolean
 }
 
-const { title, img, link, description } = Astro.props
+const { title, img, link, description, repository, difference } = Astro.props
 
 ---
 
-<section class="w-full h-[520px] relative rounded-lg transition-all duration-500 ease-out hover:shadow-crimsonshadow">
-  <a class="absolute inset-0 z-10 cursor-pointer" href={link}></a>
+<section class="w-full h-[520px] relative rounded-lg transition-all duration-500 ease-out ">
+  <!-- <a class="absolute inset-0 z-30 cursor-pointer" href={link}></a> -->
   <header class="w-full h-[full] rounded-lg z-[-1] relative">
     <img class="w-full h-full rounded-lg -z-50" src={img} alt="">
   </header>
 
-  <div class="w-full h-full z-20 flex justify-end items-end gap-[10px] opacity-0
-  absolute bottom-0 pb-[120px] pr-[10px] transition-all duration-500 ease-out hover:opacity-100">
-      <div class="w-[100px] h-[30px] flex items-center justify-center gap-[10px] bg-boldsea p-[2px] rounded-md mb-[5px]">
-        <img class="w-[25px]" src="react.svg" alt="">
-        <img class="w-[20px]" src="css.svg" alt="">
-        <img class="w-[25px]" src="reactrouter.svg" alt="">
-      </div>
-      <img class="bg-black rounded-xl p-[2px] w-[40px] h-[40px] opacity-100" src="github.svg" alt="">
+  <div class="w-full h-full z-20 flex justify-end items-end gap-[10px] opacity-0 rounded-lg
+  absolute bottom-0 pb-[120px] pr-[10px] transition-all duration-500 ease-out hover:opacity-100 hover:shadow-crimsonshadow">
+    <a class="w-full h-full" href={link}></a>
+    <div class="w-[120px] h-[30px] flex items-center justify-center gap-[10px] bg-boldsea p-[2px] rounded-md mb-[5px]">
+      <img class="w-[25px]" src="react.svg" alt="">
+      <img class="w-[20px]" src="css.svg" alt="">
+      {
+      (difference)
+        ? (<img class="w-[25px]" src="reactrouter.svg" alt="">)
+        : (<img class="w-[25px]" src="javascript.svg" alt="">)
+      }
     </div>
+    <a href={repository}>
+      <img class="bg-black rounded-xl p-[2px] w-[50px] h-[40px] opacity-100" src="github.svg" alt="">
+    </a>
+  </div>
 
   <article class="bg-boldsea2 w-full h-[120px] p-[20px] pt-[13px] rounded-es-lg rounded-ee-lg absolute bottom-0 z-[-2]">
     <div>
