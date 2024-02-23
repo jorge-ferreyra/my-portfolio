@@ -17,7 +17,7 @@ const { title, img, link, description, repository, difference } = Astro.props
 secondq:h-[420px] thirdq:h-[360px] fourthq:h-[280px]
 mobile:h-[240px]">
   <header class="w-full h-[full] rounded-lg z-[-1] relative">
-    <img class="w-full h-full rounded-lg -z-50" src={img} alt="">
+    <img loading="lazy" class="w-full h-full rounded-lg -z-50" src={img} alt="">
   </header>
 
   <div class="w-full h-full z-20 flex justify-end items-end gap-[10px] opacity-0 rounded-lg
@@ -27,18 +27,18 @@ mobile:h-[240px]">
     <div class="w-[110px] h-[30px] flex items-center justify-center gap-[10px] bg-boldsea p-[2px] rounded-md mb-[120px]
     secondq:mb-[130px] fourthq:mb-[105px]
     mobile:flex-col mobile:w-[30px] mobile:h-[100px] mobile:mb-[120px] mobile:mr-[200px]">
-      <img class="w-[25px]" src="react.svg" alt="">
-      <img class="w-[20px]" src="css.svg" alt="">
+      <img loading="lazy" class="w-[25px]" src="react.svg" alt="">
+      <img loading="lazy" class="w-[20px]" src="css.svg" alt="">
       {
       (difference)
-        ? (<img class="w-[25px]" src="reactrouter.svg" alt="">)
-        : (<img class="w-[25px]" src="javascript.svg" alt="">)
+        ? (<img loading="lazy" class="w-[25px]" src="reactrouter.svg" alt="">)
+        : (<img loading="lazy" class="w-[25px]" src="javascript.svg" alt="">)
       }
     </div>
     <a class="pb-[115px] pr-[10px] z-50
     secondq:pb-[125px] fourthq:pb-[100px]
     mobile:pb-[147px]" href={repository} target="blank">
-      <img class="bg-black rounded-xl p-[2px] w-[50px] h-[40px] opacity-100
+      <img loading="lazy" class="bg-black rounded-xl p-[2px] w-[50px] h-[40px] opacity-100
       transition-all duration-200 ease-out hover:shadow-crimsonshadow" src="github.svg" alt="">
     </a>
   </div>
