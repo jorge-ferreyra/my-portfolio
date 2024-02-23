@@ -3,13 +3,16 @@
 interface Props {
   title: string,
   img: string,
+  link: string,
+  description: string
 }
 
-const { title, img } = Astro.props
+const { title, img, link, description } = Astro.props
 
 ---
 
 <section class="w-full h-[520px] relative rounded-lg">
+  <a class="absolute inset-0 cursor-pointer" href={link}></a>
   <header class="w-full h-[full] z-10">
     <img class="w-full h-full rounded-lg z-10" src={img} alt="">
   </header>
@@ -19,7 +22,7 @@ const { title, img } = Astro.props
       <h1 class="text-fontblue font-bold text-[24px]">{title}</h1>
     </div>
     <div>
-      <p class="text-fontbluelight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos odio odit iste aliquid obcaecati mollitia sequi cupiditate magni et amet perferendis laborum at eius repellendus reiciendis, omnis reprehenderit molestias incidunt?</p>
+      <p class="text-fontbluelight">{description}</p>
     </div>
   </article>
 </section>
