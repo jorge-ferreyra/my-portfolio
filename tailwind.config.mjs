@@ -31,7 +31,11 @@ export default {
 			fontblue: 'rgb(125, 144, 255)',
 			fontbluelight: 'rgb(186, 196, 255)'
 		},
-		extend: {}
+		extend: {
+			boxShadow: {
+				'crimsonshadow': 'inset 0 0 25px #D069FF55'
+			}
+		}
 	},
 	plugins: [],
 }

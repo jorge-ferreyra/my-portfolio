@@ -11,15 +11,17 @@ const { title, img, link, description } = Astro.props
 
 ---
 
-<section class="w-full h-[520px] relative rounded-lg">
-  <a class="absolute inset-0 cursor-pointer" href={link}></a>
-  <header class="w-full h-[full] z-10">
-    <img class="w-full h-full rounded-lg z-10" src={img} alt="">
+<section class="w-full h-[520px] relative rounded-lg transition-all duration-500 ease-out hover:shadow-crimsonshadow">
+  <a class="absolute inset-0 cursor-pointer" href={link}>
+  
+  </a>
+  <header class="w-full h-[full] rounded-lg z-[-1] relative">
+    <img class="w-full h-full rounded-lg -z-50" src={img} alt="">
   </header>
 
-  <article class="bg-boldsea2 w-full h-[120px] p-[20px] rounded-es-lg rounded-ee-lg absolute bottom-0 z-[-1]">
+  <article class="bg-boldsea2 w-full h-[120px] p-[20px] pt-[13px] rounded-es-lg rounded-ee-lg absolute bottom-0 z-[-2]">
     <div>
-      <h1 class="text-fontblue font-bold text-[24px]">{title}</h1>
+      <h1 class="text-fontblue font-bold text-[24px] mb-[7px]">{title}</h1>
     </div>
     <div>
       <p class="text-fontbluelight">{description}</p>
