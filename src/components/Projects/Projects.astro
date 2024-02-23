@@ -2,7 +2,9 @@
 import CardProjects from "./CardProjects.astro"
 ---
 
-<section class="mt-[200px] w-full h-[1200px] bg-graysmooth rounded-lg">
+<section class="mt-[200px] w-full h-[1200px] bg-graysmooth rounded-lg
+secondq:h-[1070px] thirdq:h-[950px] thirdq:mt-[150px] fourthq:h-[700px]
+mobile:mt-[100px] mobile:h-[650px]">
   <header class="w-full h-[90px] pt-[20px] px-[40px]">
     <div class="w-[full] h-[70px] bg-gradient-to-r from-boldsea to-crimson p-[1px] rounded-md">
       <div class="w-full h-full bg-puregray flex items-center justify-center pl-[10px] rounded-md">
@@ -10,9 +12,11 @@ import CardProjects from "./CardProjects.astro"
       </div>
     </div>
   </header>
-    <div class="w-full h-[1110px] rounded-lg flex flex-col items-center justify-center p-[40px] gap-[40px]">
+    <div class="w-full h-[1110px] rounded-lg flex flex-col items-center justify-center p-[40px] gap-[40px]
+    secondq:h-[980px] thirdq:h-[860px] fourthq:h-[610px] fourthq:p-[20px] fourthq:gap-[20px]
+    mobile:h-[560px]">
       <CardProjects title="React Shop" img="Project2.png" link=""
-      description="Una simulación de Ecommerce con React que cuenta con una lista y busqueda de productos. También cuenta con un carrito que permite gestionar la compra. Hecho en React con Custom Hooks, React Router, useReducer y useContext."
+      description="Una simulación de Ecommerce con React que cuenta con una lista y busqueda de productos. También cuenta con un carrito que permite gestionar las compras. Hecho en React con Custom Hooks, React Router, useReducer y useContext."
       repository="https://github.com/jorge-ferreyra/shopping-cart"
       difference={true}/>
       <CardProjects title="Cybertruck Reveal" img="Project1.png" link="https://cybertruckreveal.netlify.app/"
