@@ -25,6 +25,7 @@ export default {
 			magicrose: '#D069FF14',
 			purpleoctopus: '#8759FF',
 			purpleoctopus2: '#8759FF06',
+			purpleoctopus3: '#8759FF24',
 			greenlight: '#59FF8F',
 			greendark: '#266D3E',
 			lightsea: 'rgb(148, 148, 255)',
