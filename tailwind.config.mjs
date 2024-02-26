@@ -16,6 +16,8 @@ export default {
 			blackmatter: 'rgb(1, 0, 10)',
 			transparent: 'transparent',
 			blacktransparent: 'rgba(0, 0, 0, .6)',
+			blacktransparent2: 'rgba(0, 0, 0, .3)',
+			blacktransparent3: 'rgba(0, 0, 0, .9)',
 			graysmooth: 'rgba(255, 255, 255, .015)',
 			graysmooth2: 'rgba(255, 255, 255, .04)',
 			graysmooth3: 'rgba(255, 255, 255, .2)',
