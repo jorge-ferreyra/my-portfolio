@@ -22,6 +22,7 @@ export default {
 			crimson: '#FF5D59',
 			magicrose: '#D069FF14',
 			purpleoctopus: '#8759FF',
+			purpleoctopus2: '#8759FF06',
 			greenlight: '#59FF8F',
 			greendark: '#266D3E',
 			lightsea: 'rgb(148, 148, 255)',
