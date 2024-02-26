@@ -15,6 +15,7 @@ export default {
 			ocean: 'rgb(2, 0, 19)',
 			blackmatter: 'rgb(1, 0, 10)',
 			transparent: 'transparent',
+			blacktransparent: 'rgba(0, 0, 0, .6)',
 			graysmooth: 'rgba(255, 255, 255, .015)',
 			graysmooth2: 'rgba(255, 255, 255, .04)',
 			graysmooth3: 'rgba(255, 255, 255, .2)',
@@ -27,6 +28,7 @@ export default {
 			boldsea: 'rgb(86, 86, 253)',
 			boldsea2: 'rgba(86, 86, 253, .15)',
 			boldsea3: 'rgba(86, 86, 253, .05)',
+			boldsea4: 'rgba(86, 86, 253, .8)',
 			white: 'rgba(255, 255, 255)',
 			fontblue: 'rgb(125, 144, 255)',
 			fontbluelight: 'rgb(186, 196, 255)'

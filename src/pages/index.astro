@@ -3,15 +3,17 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header/Header.astro'
 import Profile from '../components/Profile/Profile.astro'
 import Projects from '../components/Projects/Projects.astro'
+import About from '../components/About/About.astro'
 ---
 
-<Layout title="My Portfolio">
+<Layout title="Portfolio de Jorge Ferreyra">
   <main class="w-full h-full flex justify-center">
     <Header />
     <div class="max-w-[1000px]
     secondq:max-w-[800px] thirdq:max-w-[650px] fourthq:max-w-[460px] mobile:max-w-[350px]">
       <Profile />
       <Projects />
+      <About />
     </div>
     
   </main>
