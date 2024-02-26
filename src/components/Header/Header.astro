@@ -13,7 +13,7 @@
   }
   @keyframes changeColor {
     to {
-      color: rgb(0, 0, 18);
+      color: rgb(186, 196, 255);
     }
   }
   .animate-blurIt {
@@ -35,19 +35,19 @@
     firstq:w-[30%] secondq:w-[40%] thirdq:w-[50%] fourthq:w-[68%]">
       <a class="p-[12px] no-underline text-lightsea w-full text-center
       transition-all ease-in-out hover:font-bold hover:text-boldsea animate-text
-      fourthq:text-[12px] fourthq:py-[15px]" href="#">Inicio</a>
+      fourthq:text-[12px] fourthq:py-[15px]" href="#Intro">Inicio</a>
 
       <a class="p-[12px] no-underline text-lightsea w-full text-center
       transition-all ease-in-out hover:font-bold hover:text-boldsea animate-text
-      fourthq:text-[12px] fourthq:py-[15px]" href="#">Proyectos</a>
+      fourthq:text-[12px] fourthq:py-[15px]" href="#Projects">Proyectos</a>
 
       <a class="p-[12px] no-underline text-lightsea w-full text-center
       transition-all ease-in-out hover:font-bold hover:text-boldsea animate-text
-      fourthq:text-[12px] fourthq:py-[15px]" href="#">Sobre mí</a>
+      fourthq:text-[12px] fourthq:py-[15px]" href="#About">Sobre mí</a>
       
       <a class="p-[12px] no-underline text-lightsea w-full text-center
       transition-all ease-in-out hover:font-bold hover:text-boldsea animate-text
-      fourthq:text-[12px] fourthq:py-[15px]" href="#">Contacto</a>
+      fourthq:text-[12px] fourthq:py-[15px]" href="#Contact">Contacto</a>
     </li>
     <li class="px-2 w-[140px] h-full flex justify-center items-center gap-2 bg-graysmooth2 rounded-xl absolute right-6 animate-blurIt
     transition-all duration-500 ease-in-out hover:bg-magicrose group
@@ -68,6 +68,20 @@
   </ul>
   <div id="backdrop" style=" border-radius: 6px; position: absolute; background-color: #D069FF14; left: 0; top: 0; width: 0; height: 0; transition: all .6s ease-out; overflow: hidden; opacity: 0; z-index: -10;"></div>
 </header>
+
+<script>
+  const navigateButton = document.querySelectorAll('header ul li a')
+  navigateButton.forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      e.preventDefault()
+      const targetId = anchor.getAttribute('href')
+      const targetElement = document.querySelector(targetId)
+      if (targetElement instanceof HTMLElement) {
+        window.scrollTo({ top: targetElement.offsetTop - 100, behavior: 'smooth' })
+      }
+    })
+  })
+</script>
 
 <script>
   const listOfItems = document.querySelectorAll('header ul li a')
