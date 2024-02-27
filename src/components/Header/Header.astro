@@ -2,11 +2,18 @@
 ---
 
 <style>
-  @keyframes blurIt {
+  @keyframes blurItDark {
     to {
       background-color: rgba(86, 86, 253, .3);
       backdrop-filter: blur(6px);
       color: black;
+    }
+  }
+  @keyframes blurItLight {
+    to {
+      background-color: rgba(86, 86, 253, .7);
+      backdrop-filter: blur(6px);
+      color: white;
     }
   }
   @keyframes changeColor {
@@ -14,8 +21,13 @@
       color: rgb(186, 196, 255);
     }
   }
-  .animate-blurIt {
-    animation: blurIt linear both;
+  .animate-blurItDark {
+    animation: blurItDark linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 200px;
+  }
+  .animate-blurItLight {
+    animation: blurItLight linear both;
     animation-timeline: scroll(root block);
     animation-range: 0 200px;
   }
@@ -29,7 +41,7 @@
 <header class="w-full h-[100px] bg-transparent flex justify-center items-center fixed z-30">
   <ul class="w-full h-[50px] list-none flex justify-center items-center p-0 relative
   fourthq:justify-start fourthq:ml-6 mobile:ml-1">
-    <li class="w-1/4 h-full flex justify-center items-center bg-graysmooth rounded-xl hover:bg-boldsea3 animate-blurIt
+    <li id="navbar" class="w-1/4 h-full flex justify-center items-center rounded-xl animate-blurItDark
     firstq:w-[30%] secondq:w-[40%] thirdq:w-[50%] fourthq:w-[68%]">
       <a class="p-[12px] no-underline text-lightsea w-full text-center
       transition-all ease-in-out hover:font-bold hover:text-boldsea animate-text
@@ -47,7 +59,7 @@
       transition-all ease-in-out hover:font-bold hover:text-boldsea animate-text
       fourthq:text-[12px] fourthq:py-[15px]" href="#Contact">Contacto</a>
     </li>
-    <li class="px-2 w-[140px] h-full flex justify-center items-center gap-2 bg-graysmooth2 rounded-xl absolute right-6 animate-blurIt
+    <li id="card-theme" class="px-2 w-[140px] h-full flex justify-center items-center gap-2 bg-graysmooth2 rounded-xl absolute right-6 animate-blurIt
     transition-all duration-500 ease-in-out hover:bg-magicrose group
     secondq:w-[120px] thirdq:w-[100px] mobile:right-2 mobile:w-[95px] mobile:px-[4px]">
       
@@ -66,25 +78,47 @@
     </li>
     
   </ul>
-  <div id="backdrop" style=" border-radius: 6px; position: absolute; background-color: #D069FF14; left: 0; top: 0; width: 0; height: 0; transition: all .6s ease-out; overflow: hidden; opacity: 0; z-index: -10;"></div>
+  <div id="backdrop" style=" border-radius: 12px; position: absolute; left: 0; top: 0; width: 0; height: 0; transition: all .6s ease-out; overflow: hidden; opacity: 0; z-index: -10;"></div>
 </header>
 
 <script>
+const body = document.querySelector('body')
+const navbar = document.getElementById('navbar')
+const cardTheme = document.getElementById('card-theme')
 const button = document.getElementById('button-theme')
 const span = document.getElementById('span-theme')
-const body = document.querySelector('body')
+const backdropNav = document.getElementById('backdrop')
+
+
+
+
 body.style.background = 'linear-gradient(rgb(2, 0, 19), rgb(1, 0, 10))'
+navbar.style.background = 'rgba(255, 255, 255, .015)'
+// cardTheme.style.background
+backdropNav.style.background = '#D069FF14'
+
+
 let theme = 'dark'
 button.addEventListener('click', () => {
   if (theme === 'dark') {
     span.style.transform = 'translate(20px, 0)'
-    body.style.transition = 'all 5s ease-in-out'
     body.style.background = 'linear-gradient(rgba(86, 86, 253, 86), #D069FF86)'
+    navbar.style.background = 'rgba(0, 0, 0, .5)'
+    navbar.classList.remove('animate-blurItDark')
+    navbar.classList.add('animate-blurItLight')
+    backdropNav.style.background = '#8759FF'
+
+
     theme = 'light'
   } else if (theme === 'light') {
     span.style.transform = 'translate(0, 0)'
-    body.style.transition = 'all 5s ease-in-out'
     body.style.background = 'linear-gradient(rgb(2, 0, 19), rgb(1, 0, 10))'
+    navbar.style.background = 'rgba(255, 255, 255, .015)'
+    navbar.classList.remove('animate-blurItLight')
+    navbar.classList.add('animate-blurItDark')
+    backdropNav.style.background = '#D069FF14'
+
+
     theme = 'dark'
   }
 })
