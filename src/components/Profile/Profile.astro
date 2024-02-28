@@ -11,7 +11,7 @@ import Socialbox from './Socialbox.astro'
   }
 </style>
 
-<section class="w-[100%] h-[400px] bg-graysmooth mt-[240px] rounded-lg border-[1px] border-purpleoctopus3
+<section id="section-profile" class="w-[100%] h-[400px] bg-graysmooth mt-[240px] rounded-lg border-[1px]
 firstq:mt-[150px] secondq:h-[380px] thirdq:h-[350px]  fourthq:mt-[180px] fourthq:h-[280px]
 mobile:mt-[130px] mobile:h-[370px]">
   <div class="w-[100%] h-[100%] flex items-center gap-[32px] p-[32px]
@@ -19,15 +19,15 @@ mobile:mt-[130px] mobile:h-[370px]">
   mobile:flex-col">
     <picture class="w-[30%]
     fourthq:w-[40%]">
-      <img class="w-[100%] rounded-[50%] border-solid border-[1px] border-boldsea" src={'profile-img.jpg'} alt="">
+      <img id="image-profile" class="w-[100%] rounded-[50%] border-solid border-[1px]" src={'profile-img.jpg'} alt="">
     </picture>
     <article class="w-[70%] flex flex-col 
     mobile:w-[100%]">
-      <h1 class="w-[97%] text-fontbluelight text-[50px] font-bold mb-3 border-b border-boldsea2
-      secondq:text-[38px] secondq:mb-2 thirdq:text-[30px] fourthq:text-[20px] mobile:text-[15px]">¡Hola!, Soy <span class="text-fontblue font-bold">Jorge Ferreyra</span></h1>
+      <h1 id="title-profile" class="w-[97%] text-fontbluelight text-[50px] font-bold mb-3 border-b border-boldsea2
+      secondq:text-[38px] secondq:mb-2 thirdq:text-[30px] fourthq:text-[20px] mobile:text-[15px]">¡Hola!, Soy <span id="span-title-profile" class="font-bold">Jorge Ferreyra</span></h1>
       <div class="flex items-center mb-6 gap-3
        secondq:mb-3 thirdq:mb-3 mobile:mb-2">
-        <h2 class="font-bold text-[30px] text-purpleoctopus
+        <h2 id="subtitle-profile" class="font-bold text-[30px] text-purpleoctopus
         thirdq:text-[20px] fourthq:text-[14px] mobile:text-[11px]">Desarrollador web</h2>
         <a class="flex items-center gap-1  bg-greendark rounded-[4px] p-[2px] opacity-[.7] z-10 cursor-pointer
         mobile:p-0 mobile:px-1 mobile:h-[10px]" href="mailto:jorxfer@gmail.com">
@@ -37,8 +37,8 @@ mobile:mt-[130px] mobile:h-[370px]">
           thirdq:w-[16px] fourthq:w-[12px] mobile:w-[8px]" src="send.svg" alt="">
         </a>
       </div>
-      <p class="text-[16px] leading-6 text-fontbluelight
-      thirdq:text-[15px] fourthq:text-[12px] fourthq:leading-4 mobile:text-[10px]">Soy un estudiante de programación en la <a href="https://www.frgp.utn.edu.ar/" target="_blank" class="text-fontblue hover:underline">Universidad Tecnológica Nacional</a>, me encanta el desarrollo web y crear las mejores experiencias para los usuarios. <br>
+      <p id="text-profile" class="text-[16px] leading-6 text-fontbluelight
+      thirdq:text-[15px] fourthq:text-[12px] fourthq:leading-4 mobile:text-[10px]">Soy un estudiante de programación en la <a id="span-text-profile" href="https://www.frgp.utn.edu.ar/" target="_blank" class="font-bold hover:underline">Universidad Tecnológica Nacional</a>, me encanta el desarrollo web y crear las mejores experiencias para los usuarios. <br>
       Disfruto de programar tanto en el Frontend como el Backend, y de moldear productos que sean capaces de tener un impacto positivo en las personas.</p>
       <ul class="w-[100%] h-[50px] flex items-center justify-end gap-[14px] mt-[22px] pr-[12px]
       secondq:mt-[0px] secondq:pr-[0] thirdq:pr-[4px] thirdq:mt-[5px] fourthq:pr-[3px] fourthq:mt-[2px]
@@ -47,7 +47,7 @@ mobile:mt-[130px] mobile:h-[370px]">
         thirdq:w-[160px] fourthq:w-[130px]">
           <a class="z-[2] w-[100%] h-[60%] p-2 flex justify-center bg-black items-center rounded-lg absolute
           before:content-[''] before:opacity-0 before:bg-gradient-to-r before:from-boldsea before:to-purpleoctopus before:w-[100%] before:h-[100%] 
-          before:absolute before:rounded-lg before:hover:opacity-100 before:transition-all before:duration-1000 before:ease-out
+          before:absolute before:rounded-[6px] before:hover:opacity-100 before:transition-all before:duration-1000 before:ease-out
           thirdq:text-[14px] fourthq:text-[10px]" href="Curriculum-Vitae.pdf" download>
             <p class="z-[3] text-white">¡Descarga mi CV! </p>
             <img class="z-[3] w-[28px] h-[28px] ml-[10px]

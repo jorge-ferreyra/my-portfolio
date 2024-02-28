@@ -29,22 +29,22 @@
   .animate-blurItDark {
     animation: blurItDark linear both;
     animation-timeline: scroll(root block);
-    animation-range: 0 200px;
+    animation-range: 0 100px;
   }
   .animate-blurItLight {
     animation: blurItLight linear both;
     animation-timeline: scroll(root block);
-    animation-range: 0 200px;
+    animation-range: 0 100px;
   }
   .animate-textDark {
     animation: changeColorDark linear both;
     animation-timeline: scroll(root block);
-    animation-range: 0 200px;
+    animation-range: 0 100px;
   }
   .animate-textLight {
     animation: changeColorLight linear both;
     animation-timeline: scroll(root block);
-    animation-range: 0 200px;
+    animation-range: 0 100px;
   }
 </style>
 
@@ -102,14 +102,28 @@ const span = document.getElementById('span-theme')
 const sun = document.getElementById('sun')
 const backdropNav = document.getElementById('backdrop')
 
-
-
+const profile = document.getElementById('section-profile')
+const imgProfile = document.getElementById('image-profile')
+const titleProfile = document.getElementById('title-profile')
+const spanTitle = document.getElementById('span-title-profile')
+const subtitleProfile = document.getElementById('subtitle-profile')
+const textProfile = document.getElementById('text-profile')
+const spanText = document.getElementById('span-text-profile')
 
 body.style.background = 'linear-gradient(rgb(2, 0, 19), rgb(1, 0, 10))'
 navbar.style.background = 'rgba(255, 255, 255, .015)'
 cardTheme.style.background = 'rgba(255, 255, 255, .04)'
 backdropNav.style.background = '#D069FF14'
 sun.style.opacity = '.5'
+
+profile.style.background = 'rgba(255, 255, 255, .015)'
+profile.style.borderColor = '#8759FF24'
+imgProfile.style.borderColor = 'rgb(86, 86, 253)'
+titleProfile.style.color = 'rgb(186, 196, 255)'
+spanTitle.style.color = 'rgb(125, 144, 255)'
+subtitleProfile.style.color = '#8759FF'
+textProfile.style.color = 'rgb(186, 196, 255)'
+spanText.style.color = 'rgb(186, 196, 255)'
 
 let theme = 'dark'
 button.addEventListener('click', () => {
@@ -126,12 +140,20 @@ button.addEventListener('click', () => {
       anchor.classList.remove('animate-textDark')
       anchor.classList.add('animate-textLight')
     })
-
     cardTheme.style.background = 'rgba(0, 0, 0, .5)'
     cardTheme.classList.remove('animate-blurItDark')
     cardTheme.classList.add('animate-blurItLight')
     backdropNav.style.background = '#603db9'
 
+    profile.style.background = 'rgba(255, 255, 255, .1)'
+    profile.style.borderColor = '#D069FF65'
+    imgProfile.style.borderColor = '#D069FF'
+    titleProfile.style.color = 'black'
+    subtitleProfile.style.color = '#8637aa'
+    textProfile.style.color = 'black'
+    spanTitle.style.color = 'rgb(31, 31, 116)'
+    spanText.style.color = 'rgb(30, 23, 97)'
+ 
 
     theme = 'light'
   } else if (theme === 'light') {
@@ -147,12 +169,19 @@ button.addEventListener('click', () => {
       anchor.classList.remove('animate-textLight')
       anchor.classList.add('animate-textDark')
     })
-
     cardTheme.style.background = 'rgba(255, 255, 255, .04)'
     cardTheme.classList.remove('animate-blurItLight')
     cardTheme.classList.add('animate-blurItDark')
     backdropNav.style.background = '#D069FF14'
 
+    profile.style.background = 'rgba(255, 255, 255, .015)'
+    profile.style.borderColor = '#8759FF24'
+    imgProfile.style.borderColor = 'rgb(86, 86, 253)'
+    titleProfile.style.color = 'rgb(186, 196, 255)'
+    subtitleProfile.style.color = '#8759FF'
+    textProfile.style.color = 'rgb(186, 196, 255)'
+    spanTitle.style.color = 'rgb(125, 144, 255)'
+    spanText.style.color = 'rgb(186, 196, 255)'
 
     theme = 'dark'
   }
