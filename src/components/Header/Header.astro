@@ -55,7 +55,7 @@
     firstq:w-[30%] secondq:w-[40%] thirdq:w-[50%] fourthq:w-[68%]">
       <a id="navigate-anchor" class="p-[12px] no-underline w-full text-lightsea text-center
       transition-all ease-in-out hover:font-bold hover:text-boldsea animate-textDark
-      fourthq:text-[12px] fourthq:py-[15px]" href="#Intro">Inicio</a>
+      fourthq:text-[12px] fourthq:py-[15px]" href="#section-intro">Inicio</a>
 
       <a id="navigate-anchor" class="p-[12px] no-underline w-full text-lightsea text-center
       transition-all ease-in-out hover:font-bold hover:text-boldsea animate-textDark
@@ -67,23 +67,23 @@
       
       <a id="navigate-anchor" class="p-[12px] no-underline w-full text-lightsea text-center
       transition-all ease-in-out hover:font-bold hover:text-boldsea animate-textDark
-      fourthq:text-[12px] fourthq:py-[15px]" href="#Contact">Contacto</a>
+      fourthq:text-[12px] fourthq:py-[15px]" href="#section-contact">Contacto</a>
     </li>
     <li id="card-theme" class="px-2 w-[140px] h-full flex justify-center items-center gap-2 rounded-xl absolute right-6 animate-blurItDark
     transition-all duration-500 ease-in-out hover:bg-magicrose group
     secondq:w-[120px] thirdq:w-[100px] mobile:right-2 mobile:w-[95px] mobile:px-[4px]">
       
-      <img id="moon" class="w-[60%] h-[60%]
+      <img id="moon" class="w-[60%] h-[60%] transition-all duration-500 ease-out
       secondq:w-[25%] thirdq:w-[20%]" src="moon-filled.svg" alt="">
 
-      <button id="button-theme" class="w-[80%] h-[50%] bg-ocean rounded-lg relative z-10
+      <button id="button-theme" class="w-[80%] h-[50%] bg-ocean rounded-lg relative z-10 transition-all duration-500 ease-out
       secondq:w-[90%] thirdq:w-[100%]">
-        <span id="span-theme" class="w-[15px] h-[15px] absolute left-1 top-[5px] rounded-sm bg-lightsea z-20 
+        <span id="span-theme" class="w-[15px] h-[15px] absolute left-1 top-[5px] rounded-sm bg-lightsea z-20
         transition-all duration-500 ease-in-out group-hover:bg-boldsea
         secondq:w-[12px]"></span>
       </button>
       
-      <img id="sun" class="w-[60%] h-[60%]
+      <img id="sun" class="w-[60%] h-[60%] transition-all duration-500 ease-out
       secondq:w-[25%] thirdq:w-[20%]" src="sun-filled.svg" alt="">
     </li>
     
@@ -138,6 +138,13 @@ const backTecAbout = document.getElementById('back-tek-about')
 const tecTitle = document.querySelectorAll<HTMLElement>('#title-tek')
 const tecTitle2 = document.querySelectorAll<HTMLElement>('#title-tek2')
 
+const contact = document.getElementById('section-contact')
+const titleContact = document.getElementById('title-contact')
+const subtitleContact = document.getElementById('subtitle-contact')
+const linkBoxContact = document.getElementById('link-box-contact')
+const boxContact = document.querySelectorAll<HTMLElement>('#box-contact')
+const textBoxContact = document.querySelectorAll<HTMLElement>('#text-box-contact')
+
 body.style.background = 'linear-gradient(rgb(2, 0, 19), rgb(1, 0, 10))'
 navbar.style.background = 'rgba(255, 255, 255, .015)'
 cardTheme.style.background = 'rgba(255, 255, 255, .04)'
@@ -189,6 +196,18 @@ tecTitle2.forEach(h2 => {
   h2.style.backgroundClip = 'text'
 })
 
+contact.style.background = 'rgba(255, 255, 255, .015)'
+contact.style.borderColor = '#8759FF24'
+titleContact.style.color = 'rgb(186, 196, 255)'
+subtitleContact.style.color = 'rgb(125, 144, 255)'
+linkBoxContact.style.background = '#8759FF24'
+boxContact.forEach(div => {
+  div.style.background = 'rgba(86, 86, 253, .15)'
+})
+textBoxContact.forEach(anchor => {
+  anchor.style.color = 'rgb(125, 144, 255)'
+})
+
 let theme = 'dark'
 button.addEventListener('click', () => {
   if (theme === 'dark') {
@@ -196,7 +215,7 @@ button.addEventListener('click', () => {
     span.style.transform = 'translate(20px, 0)'
     span.style.background = '#8759FF'
     sun.style.opacity = '1'
-    body.style.background = 'linear-gradient(rgba(86, 86, 253, 86), #D069FF93)'
+    body.style.background = 'linear-gradient(rgba(86, 86, 253, .84), #D069FF84)'
     navbar.style.background = 'rgba(0, 0, 0, .5)'
     navbar.classList.remove('animate-blurItDark')
     navbar.classList.add('animate-blurItLight')
@@ -234,13 +253,13 @@ button.addEventListener('click', () => {
 
     about.style.background = 'rgba(255, 255, 255, .1)'
     about.style.borderColor = '#D069FF65'
-    titleBackAbout.style.background = 'rgba(86, 86, 253, .6)'
+    titleBackAbout.style.background = 'rgba(86, 86, 253, .4)'
     titleAbout.style.color = 'rgb(31, 31, 116)'
     imageAbout.style.borderColor = '#D069FF'
-    articleAbout.style.background = 'rgba(86, 86, 253, .6)'
+    articleAbout.style.background = 'rgba(86, 86, 253, .4)'
     textArticleAbout.style.color = 'black'
     spanArticleAbout.style.color = '#67158d'
-    tecAbout.style.background = 'rgba(86, 86, 253, .6)'
+    tecAbout.style.background = 'rgba(86, 86, 253, .4)'
     tecBackAbout.style.background = 'linear-gradient(to right, rgb(32, 32, 172), #FF5D59)'
     tecFrontAbout.style.background = '#D069FF74'
     titleTecAbout.style.color = 'rgb(31, 31, 116)'
@@ -252,6 +271,18 @@ button.addEventListener('click', () => {
     tecTitle2.forEach(h2 => {
       h2.style.background = 'linear-gradient(to right, #4d3096, rgb(31, 31, 116))'
       h2.style.backgroundClip = 'text'
+    })
+
+    contact.style.background = 'rgba(255, 255, 255, .1)'
+    contact.style.borderColor = '#D069FF65'
+    titleContact.style.color = 'rgb(0, 0, 0)'
+    subtitleContact.style.color = 'rgb(31, 31, 116)'
+    linkBoxContact.style.background = 'rgba(86, 86, 253, .4)'
+    boxContact.forEach(div => {
+      div.style.background = 'rgba(255, 255, 255, .2)'
+    })
+    textBoxContact.forEach(anchor => {
+      anchor.style.color = 'rgb(0, 0, 0)'
     })
 
     theme = 'light'
@@ -316,6 +347,18 @@ button.addEventListener('click', () => {
     tecTitle2.forEach(h2 => {
       h2.style.background = 'linear-gradient(to right, #FF5D59, rgb(86, 86, 253))'
       h2.style.backgroundClip = 'text'
+    })
+
+    contact.style.background = 'rgba(255, 255, 255, .015)'
+    contact.style.borderColor = '#8759FF24'
+    titleContact.style.color = 'rgb(186, 196, 255)'
+    subtitleContact.style.color = 'rgb(125, 144, 255)'
+    linkBoxContact.style.background = '#8759FF24'
+    boxContact.forEach(div => {
+      div.style.background = 'rgba(86, 86, 253, .15)'
+    })
+    textBoxContact.forEach(anchor => {
+      anchor.style.color = 'rgb(125, 144, 255)'
     })
 
     theme = 'dark'
