@@ -4,21 +4,26 @@
 <style>
   @keyframes blurItDark {
     to {
-      background-color: rgba(86, 86, 253, .3);
+      background-color: rgba(86, 86, 253, .3) ;
       backdrop-filter: blur(6px);
       color: black;
     }
   }
   @keyframes blurItLight {
     to {
-      background-color: rgba(86, 86, 253, .7);
+      background-color: rgba(54, 54, 173, 0.7) ;
       backdrop-filter: blur(6px);
       color: white;
     }
   }
-  @keyframes changeColor {
+  @keyframes changeColorDark {
     to {
       color: rgb(186, 196, 255);
+    }
+  }
+  @keyframes changeColorLight {
+    to {
+      color: rgb(0, 0, 0);
     }
   }
   .animate-blurItDark {
@@ -31,8 +36,13 @@
     animation-timeline: scroll(root block);
     animation-range: 0 200px;
   }
-  .animate-text {
-    animation: changeColor linear both;
+  .animate-textDark {
+    animation: changeColorDark linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 200px;
+  }
+  .animate-textLight {
+    animation: changeColorLight linear both;
     animation-timeline: scroll(root block);
     animation-range: 0 200px;
   }
@@ -43,27 +53,27 @@
   fourthq:justify-start fourthq:ml-6 mobile:ml-1">
     <li id="navbar" class="w-1/4 h-full flex justify-center items-center rounded-xl animate-blurItDark
     firstq:w-[30%] secondq:w-[40%] thirdq:w-[50%] fourthq:w-[68%]">
-      <a class="p-[12px] no-underline text-lightsea w-full text-center
-      transition-all ease-in-out hover:font-bold hover:text-boldsea animate-text
+      <a id="navigate-anchor" class="p-[12px] no-underline w-full text-lightsea text-center
+      transition-all ease-in-out hover:font-bold hover:text-boldsea animate-textDark
       fourthq:text-[12px] fourthq:py-[15px]" href="#Intro">Inicio</a>
 
-      <a class="p-[12px] no-underline text-lightsea w-full text-center
-      transition-all ease-in-out hover:font-bold hover:text-boldsea animate-text
+      <a id="navigate-anchor" class="p-[12px] no-underline w-full text-lightsea text-center
+      transition-all ease-in-out hover:font-bold hover:text-boldsea animate-textDark
       fourthq:text-[12px] fourthq:py-[15px]" href="#Projects">Proyectos</a>
 
-      <a class="p-[12px] no-underline text-lightsea w-full text-center
-      transition-all ease-in-out hover:font-bold hover:text-boldsea animate-text
+      <a id="navigate-anchor" class="p-[12px] no-underline w-full text-lightsea text-center
+      transition-all ease-in-out hover:font-bold hover:text-boldsea animate-textDark
       fourthq:text-[12px] fourthq:py-[15px]" href="#About">Sobre mí</a>
       
-      <a class="p-[12px] no-underline text-lightsea w-full text-center
-      transition-all ease-in-out hover:font-bold hover:text-boldsea animate-text
+      <a id="navigate-anchor" class="p-[12px] no-underline w-full text-lightsea text-center
+      transition-all ease-in-out hover:font-bold hover:text-boldsea animate-textDark
       fourthq:text-[12px] fourthq:py-[15px]" href="#Contact">Contacto</a>
     </li>
-    <li id="card-theme" class="px-2 w-[140px] h-full flex justify-center items-center gap-2 bg-graysmooth2 rounded-xl absolute right-6 animate-blurIt
+    <li id="card-theme" class="px-2 w-[140px] h-full flex justify-center items-center gap-2 rounded-xl absolute right-6 animate-blurItDark
     transition-all duration-500 ease-in-out hover:bg-magicrose group
     secondq:w-[120px] thirdq:w-[100px] mobile:right-2 mobile:w-[95px] mobile:px-[4px]">
       
-      <img class="w-[60%] h-[60%]
+      <img id="moon" class="w-[60%] h-[60%]
       secondq:w-[25%] thirdq:w-[20%]" src="moon-filled.svg" alt="">
 
       <button id="button-theme" class="w-[80%] h-[50%] bg-ocean rounded-lg relative z-10
@@ -73,20 +83,23 @@
         secondq:w-[12px]"></span>
       </button>
       
-      <img class="w-[60%] h-[60%]
+      <img id="sun" class="w-[60%] h-[60%]
       secondq:w-[25%] thirdq:w-[20%]" src="sun-filled.svg" alt="">
     </li>
     
   </ul>
-  <div id="backdrop" style=" border-radius: 12px; position: absolute; left: 0; top: 0; width: 0; height: 0; transition: all .6s ease-out; overflow: hidden; opacity: 0; z-index: -10;"></div>
+  <div id="backdrop" style=" border-radius: 12px; position: absolute; left: 50%; translateX: -50%; top: 0; width: 0; height: 0; transition: all .6s ease-out; overflow: hidden; opacity: 0; z-index: -10;"></div>
 </header>
 
 <script>
 const body = document.querySelector('body')
 const navbar = document.getElementById('navbar')
+const childrensNavbar = document.querySelectorAll('#navigate-anchor')
 const cardTheme = document.getElementById('card-theme')
+const moon = document.getElementById('moon')
 const button = document.getElementById('button-theme')
 const span = document.getElementById('span-theme')
+const sun = document.getElementById('sun')
 const backdropNav = document.getElementById('backdrop')
 
 
@@ -94,28 +107,50 @@ const backdropNav = document.getElementById('backdrop')
 
 body.style.background = 'linear-gradient(rgb(2, 0, 19), rgb(1, 0, 10))'
 navbar.style.background = 'rgba(255, 255, 255, .015)'
-// cardTheme.style.background
+cardTheme.style.background = 'rgba(255, 255, 255, .04)'
 backdropNav.style.background = '#D069FF14'
-
+sun.style.opacity = '.5'
 
 let theme = 'dark'
 button.addEventListener('click', () => {
   if (theme === 'dark') {
+    moon.style.opacity = '.5'
     span.style.transform = 'translate(20px, 0)'
-    body.style.background = 'linear-gradient(rgba(86, 86, 253, 86), #D069FF86)'
+    span.style.background = '#8759FF'
+    sun.style.opacity = '1'
+    body.style.background = 'linear-gradient(rgba(86, 86, 253, 86), #D069FF93)'
     navbar.style.background = 'rgba(0, 0, 0, .5)'
     navbar.classList.remove('animate-blurItDark')
     navbar.classList.add('animate-blurItLight')
-    backdropNav.style.background = '#8759FF'
+    childrensNavbar.forEach(anchor => {
+      anchor.classList.remove('animate-textDark')
+      anchor.classList.add('animate-textLight')
+    })
+
+    cardTheme.style.background = 'rgba(0, 0, 0, .5)'
+    cardTheme.classList.remove('animate-blurItDark')
+    cardTheme.classList.add('animate-blurItLight')
+    backdropNav.style.background = '#603db9'
 
 
     theme = 'light'
   } else if (theme === 'light') {
+    moon.style.opacity = '1'
     span.style.transform = 'translate(0, 0)'
+    span.style.background = 'rgb(148, 148, 255)'
+    sun.style.opacity = '.5'
     body.style.background = 'linear-gradient(rgb(2, 0, 19), rgb(1, 0, 10))'
     navbar.style.background = 'rgba(255, 255, 255, .015)'
     navbar.classList.remove('animate-blurItLight')
     navbar.classList.add('animate-blurItDark')
+    childrensNavbar.forEach(anchor => {
+      anchor.classList.remove('animate-textLight')
+      anchor.classList.add('animate-textDark')
+    })
+
+    cardTheme.style.background = 'rgba(255, 255, 255, .04)'
+    cardTheme.classList.remove('animate-blurItLight')
+    cardTheme.classList.add('animate-blurItDark')
     backdropNav.style.background = '#D069FF14'
 
 
