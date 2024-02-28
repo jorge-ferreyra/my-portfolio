@@ -59,11 +59,11 @@
 
       <a id="navigate-anchor" class="p-[12px] no-underline w-full text-lightsea text-center
       transition-all ease-in-out hover:font-bold hover:text-boldsea animate-textDark
-      fourthq:text-[12px] fourthq:py-[15px]" href="#Projects">Proyectos</a>
+      fourthq:text-[12px] fourthq:py-[15px]" href="#section-projects">Proyectos</a>
 
       <a id="navigate-anchor" class="p-[12px] no-underline w-full text-lightsea text-center
       transition-all ease-in-out hover:font-bold hover:text-boldsea animate-textDark
-      fourthq:text-[12px] fourthq:py-[15px]" href="#About">Sobre mí</a>
+      fourthq:text-[12px] fourthq:py-[15px]" href="#section-about">Sobre mí</a>
       
       <a id="navigate-anchor" class="p-[12px] no-underline w-full text-lightsea text-center
       transition-all ease-in-out hover:font-bold hover:text-boldsea animate-textDark
@@ -123,6 +123,21 @@ const articleDescriptionProjects2 = document.getElementById('article2-descriptio
 const boxTecProjects = document.getElementById('box-tek-projects')
 const boxTecProjects2 = document.getElementById('box2-tek-projects')
 
+const about = document.getElementById('section-about')
+const titleBackAbout = document.getElementById('title-back-about')
+const titleAbout = document.getElementById('title-about')
+const imageAbout = document.getElementById('image-about')
+const articleAbout = document.getElementById('article-about')
+const textArticleAbout = document.getElementById('text-article-about')
+const spanArticleAbout = document.getElementById('span-article-about')
+const tecAbout = document.getElementById('tek-about')
+const tecBackAbout = document.getElementById('tek-back-about')
+const tecFrontAbout = document.getElementById('tek-front-about')
+const titleTecAbout = document.getElementById('title-tek-about')
+const backTecAbout = document.getElementById('back-tek-about')
+const tecTitle = document.querySelectorAll<HTMLElement>('#title-tek')
+const tecTitle2 = document.querySelectorAll<HTMLElement>('#title-tek2')
+
 body.style.background = 'linear-gradient(rgb(2, 0, 19), rgb(1, 0, 10))'
 navbar.style.background = 'rgba(255, 255, 255, .015)'
 cardTheme.style.background = 'rgba(255, 255, 255, .04)'
@@ -151,6 +166,28 @@ articleTitleProjects2.style.color = 'rgb(125, 144, 255)'
 articleDescriptionProjects2.style.color = 'rgb(186, 196, 255)'
 boxTecProjects.style.background = 'rgba(86, 86, 253, .4)'
 boxTecProjects2.style.background = 'rgba(86, 86, 253, .4)'
+
+about.style.background = 'rgba(255, 255, 255, .015)'
+about.style.borderColor = '#8759FF24'
+titleBackAbout.style.background = 'rgba(86, 86, 253, .15)'
+titleAbout.style.color = 'rgb(125, 144, 255)'
+imageAbout.style.borderColor = '#FF5D59'
+articleAbout.style.background = 'rgba(86, 86, 253, .15)'
+textArticleAbout.style.color = 'rgb(186, 196, 255)'
+spanArticleAbout.style.color = 'rgb(125, 144, 255)'
+tecAbout.style.background = 'rgba(86, 86, 253, .15)'
+tecBackAbout.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
+tecFrontAbout.style.background = 'rgb(6, 4, 18)'
+titleTecAbout.style.color = 'rgb(125, 144, 255)'
+backTecAbout.style.background = '#D069FF14'
+tecTitle.forEach(h2 => {
+  h2.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
+  h2.style.backgroundClip = 'text'
+})
+tecTitle2.forEach(h2 => {
+  h2.style.background = 'linear-gradient(to right, #FF5D59, rgb(86, 86, 253))'
+  h2.style.backgroundClip = 'text'
+})
 
 let theme = 'dark'
 button.addEventListener('click', () => {
@@ -195,6 +232,28 @@ button.addEventListener('click', () => {
     boxTecProjects.style.background = '#FF5D5957'
     boxTecProjects2.style.background = '#FF5D5957'
 
+    about.style.background = 'rgba(255, 255, 255, .1)'
+    about.style.borderColor = '#D069FF65'
+    titleBackAbout.style.background = 'rgba(86, 86, 253, .6)'
+    titleAbout.style.color = 'rgb(31, 31, 116)'
+    imageAbout.style.borderColor = '#D069FF'
+    articleAbout.style.background = 'rgba(86, 86, 253, .6)'
+    textArticleAbout.style.color = 'black'
+    spanArticleAbout.style.color = '#67158d'
+    tecAbout.style.background = 'rgba(86, 86, 253, .6)'
+    tecBackAbout.style.background = 'linear-gradient(to right, rgb(32, 32, 172), #FF5D59)'
+    tecFrontAbout.style.background = '#D069FF74'
+    titleTecAbout.style.color = 'rgb(31, 31, 116)'
+    backTecAbout.style.background = 'rgba(255, 255, 255, .1)'
+    tecTitle.forEach(h2 => {
+      h2.style.background = 'linear-gradient(to right, rgb(31, 31, 116), #4d3096)'
+      h2.style.backgroundClip = 'text'
+    })
+    tecTitle2.forEach(h2 => {
+      h2.style.background = 'linear-gradient(to right, #4d3096, rgb(31, 31, 116))'
+      h2.style.backgroundClip = 'text'
+    })
+
     theme = 'light'
   } else if (theme === 'light') {
     moon.style.opacity = '1'
@@ -236,6 +295,28 @@ button.addEventListener('click', () => {
     articleDescriptionProjects2.style.color = 'rgb(186, 196, 255)'
     boxTecProjects.style.background = 'rgba(86, 86, 253, .4)'
     boxTecProjects2.style.background = 'rgba(86, 86, 253, .4)'
+
+    about.style.background = 'rgba(255, 255, 255, .015)'
+    about.style.borderColor = '#8759FF24'
+    titleBackAbout.style.background = 'rgba(86, 86, 253, .15)'
+    titleAbout.style.color = 'rgb(125, 144, 255)'
+    imageAbout.style.borderColor = '#FF5D59'
+    articleAbout.style.background = 'rgba(86, 86, 253, .15)'
+    textArticleAbout.style.color = 'rgb(186, 196, 255)'
+    spanArticleAbout.style.color = 'rgb(125, 144, 255)'
+    tecAbout.style.background = 'rgba(86, 86, 253, .15)'
+    tecBackAbout.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
+    tecFrontAbout.style.background = 'rgb(6, 4, 18)'
+    titleTecAbout.style.color = 'rgb(125, 144, 255)'
+    backTecAbout.style.background = '#D069FF14'
+    tecTitle.forEach(h2 => {
+      h2.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
+      h2.style.backgroundClip = 'text'
+    })
+    tecTitle2.forEach(h2 => {
+      h2.style.background = 'linear-gradient(to right, #FF5D59, rgb(86, 86, 253))'
+      h2.style.backgroundClip = 'text'
+    })
 
     theme = 'dark'
   }
