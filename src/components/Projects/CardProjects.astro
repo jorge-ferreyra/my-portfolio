@@ -24,7 +24,7 @@ mobile:h-[240px]">
   absolute bottom-0  transition-all duration-500 ease-out hover:opacity-100 hover:shadow-crimsonshadow
   mobile:opacity-100">
     <a class="w-full h-full absolute inset-0 cursor-pointer z-10" href={link} target="blank"></a>
-    <div class="w-[110px] h-[30px] flex items-center justify-center gap-[10px] bg-boldsea p-[2px] rounded-md mb-[120px]
+    <div id={difference ? 'box-tek-projects' : 'box2-tek-projects'} class="w-[110px] h-[30px] flex items-center justify-center gap-[10px] p-[2px] rounded-md mb-[120px]
     secondq:mb-[130px] fourthq:mb-[105px]
     mobile:flex-col mobile:w-[30px] mobile:h-[100px] mobile:mb-[120px] mobile:mr-[200px]">
       <img loading="lazy" class="w-[25px]" src="react.svg" alt="">
@@ -43,15 +43,15 @@ mobile:h-[240px]">
     </a>
   </div>
 
-  <article class="bg-boldsea2 w-full h-[120px] p-[20px] pt-[13px] rounded-es-lg rounded-ee-lg absolute bottom-0 z-[-2]
+  <article id={difference ? 'article-projects' : 'article2-projects'} class="w-full h-[120px] p-[20px] pt-[13px] rounded-es-lg rounded-ee-lg absolute bottom-0 z-[-2]
   secondq:h-[130px] fourthq:pt-[30px] fourthq:p-[14px]">
     <div>
-      <h1 class="text-fontblue font-bold text-[24px] mb-[7px]
+      <h1 id={difference ? 'article-title-projects' : 'article2-title-projects'} class="text-fontblue font-bold text-[24px] mb-[7px]
       thirdq:mb-[2px] fourthq:text-[18px]
       mobile:text-[16px]">{title}</h1>
     </div>
     <div>
-      <p class="text-fontbluelight
+      <p id={difference ? 'article-description-projects' : 'article2-description-projects'} class="text-fontbluelight
       secondq:text-[14px] fourthq:text-[11px]
       mobile:text-[10px]">{description}</p>
     </div>

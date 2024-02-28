@@ -33,6 +33,7 @@ export default {
 			boldsea2: 'rgba(86, 86, 253, .15)',
 			boldsea3: 'rgba(86, 86, 253, .05)',
 			boldsea4: 'rgba(86, 86, 253, .8)',
+			boldsea5: 'rgba(86, 86, 253, .4)',
 			white: 'rgba(255, 255, 255)',
 			fontblue: 'rgb(125, 144, 255)',
 			fontbluelight: 'rgb(186, 196, 255)'

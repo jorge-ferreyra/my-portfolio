@@ -105,10 +105,23 @@ const backdropNav = document.getElementById('backdrop')
 const profile = document.getElementById('section-profile')
 const imgProfile = document.getElementById('image-profile')
 const titleProfile = document.getElementById('title-profile')
-const spanTitle = document.getElementById('span-title-profile')
+const spanTitleProfile = document.getElementById('span-title-profile')
 const subtitleProfile = document.getElementById('subtitle-profile')
 const textProfile = document.getElementById('text-profile')
-const spanText = document.getElementById('span-text-profile')
+const spanTextProfile = document.getElementById('span-text-profile')
+
+const projects = document.getElementById('section-projects')
+const backTitleProjects = document.getElementById('title-back-projects')
+const frontTitlteProjects = document.getElementById('title-front-projects')
+const textTitleProjects = document.getElementById('text-title-projects')
+const articleProjects = document.getElementById('article-projects')
+const articleProjects2 = document.getElementById('article2-projects')
+const articleTitleProjects = document.getElementById('article-title-projects')
+const articleDescriptionProjects = document.getElementById('article-description-projects')
+const articleTitleProjects2 = document.getElementById('article2-title-projects')
+const articleDescriptionProjects2 = document.getElementById('article2-description-projects')
+const boxTecProjects = document.getElementById('box-tek-projects')
+const boxTecProjects2 = document.getElementById('box2-tek-projects')
 
 body.style.background = 'linear-gradient(rgb(2, 0, 19), rgb(1, 0, 10))'
 navbar.style.background = 'rgba(255, 255, 255, .015)'
@@ -120,10 +133,24 @@ profile.style.background = 'rgba(255, 255, 255, .015)'
 profile.style.borderColor = '#8759FF24'
 imgProfile.style.borderColor = 'rgb(86, 86, 253)'
 titleProfile.style.color = 'rgb(186, 196, 255)'
-spanTitle.style.color = 'rgb(125, 144, 255)'
+spanTitleProfile.style.color = 'rgb(125, 144, 255)'
 subtitleProfile.style.color = '#8759FF'
 textProfile.style.color = 'rgb(186, 196, 255)'
-spanText.style.color = 'rgb(186, 196, 255)'
+spanTextProfile.style.color = 'rgb(186, 196, 255)'
+
+projects.style.background = 'rgba(255, 255, 255, .015)'
+projects.style.borderColor = '#8759FF24'
+backTitleProjects.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
+frontTitlteProjects.style.background = 'rgb(6, 4, 18)'
+textTitleProjects.style.color = 'rgb(125, 144, 255)'
+articleProjects.style.background = 'rgba(86, 86, 253, .15)'
+articleProjects2.style.background = 'rgba(86, 86, 253, .15)'
+articleTitleProjects.style.color = 'rgb(125, 144, 255)'
+articleDescriptionProjects.style.color = 'rgb(186, 196, 255)'
+articleTitleProjects2.style.color = 'rgb(125, 144, 255)'
+articleDescriptionProjects2.style.color = 'rgb(186, 196, 255)'
+boxTecProjects.style.background = 'rgba(86, 86, 253, .4)'
+boxTecProjects2.style.background = 'rgba(86, 86, 253, .4)'
 
 let theme = 'dark'
 button.addEventListener('click', () => {
@@ -151,9 +178,22 @@ button.addEventListener('click', () => {
     titleProfile.style.color = 'black'
     subtitleProfile.style.color = '#8637aa'
     textProfile.style.color = 'black'
-    spanTitle.style.color = 'rgb(31, 31, 116)'
-    spanText.style.color = 'rgb(30, 23, 97)'
+    spanTitleProfile.style.color = 'rgb(31, 31, 116)'
+    spanTextProfile.style.color = 'rgb(30, 23, 97)'
  
+    projects.style.background = 'rgba(255, 255, 255, .1)'
+    projects.style.borderColor = '#D069FF65'
+    backTitleProjects.style.background = 'linear-gradient(to right, rgb(32, 32, 172), #FF5D59)'
+    frontTitlteProjects.style.background = '#D069FF74'
+    textTitleProjects.style.color = 'rgb(31, 31, 116)'
+    articleProjects.style.background = '#FF5D5957'
+    articleProjects2.style.background = '#FF5D5957'
+    articleTitleProjects.style.color = 'rgb(49, 49, 187)'
+    articleDescriptionProjects.style.color = 'black'
+    articleTitleProjects2.style.color = 'rgb(49, 49, 187)'
+    articleDescriptionProjects2.style.color = 'black'
+    boxTecProjects.style.background = '#FF5D5957'
+    boxTecProjects2.style.background = '#FF5D5957'
 
     theme = 'light'
   } else if (theme === 'light') {
@@ -180,8 +220,22 @@ button.addEventListener('click', () => {
     titleProfile.style.color = 'rgb(186, 196, 255)'
     subtitleProfile.style.color = '#8759FF'
     textProfile.style.color = 'rgb(186, 196, 255)'
-    spanTitle.style.color = 'rgb(125, 144, 255)'
-    spanText.style.color = 'rgb(186, 196, 255)'
+    spanTitleProfile.style.color = 'rgb(125, 144, 255)'
+    spanTextProfile.style.color = 'rgb(186, 196, 255)'
+
+    projects.style.background = 'rgba(255, 255, 255, .015)'
+    projects.style.borderColor = '#8759FF24'
+    backTitleProjects.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
+    frontTitlteProjects.style.background = 'rgb(6, 4, 18)'
+    textTitleProjects.style.color = 'rgb(125, 144, 255)'
+    articleProjects.style.background = 'rgba(86, 86, 253, .15)'
+    articleProjects2.style.background = 'rgba(86, 86, 253, .15)'
+    articleTitleProjects.style.color = 'rgb(125, 144, 255)'
+    articleDescriptionProjects.style.color = 'rgb(186, 196, 255)'
+    articleTitleProjects2.style.color = 'rgb(125, 144, 255)'
+    articleDescriptionProjects2.style.color = 'rgb(186, 196, 255)'
+    boxTecProjects.style.background = 'rgba(86, 86, 253, .4)'
+    boxTecProjects2.style.background = 'rgba(86, 86, 253, .4)'
 
     theme = 'dark'
   }
