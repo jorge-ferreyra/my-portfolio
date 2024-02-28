@@ -145,6 +145,13 @@ const linkBoxContact = document.getElementById('link-box-contact')
 const boxContact = document.querySelectorAll<HTMLElement>('#box-contact')
 const textBoxContact = document.querySelectorAll<HTMLElement>('#text-box-contact')
 
+const footer = document.getElementById('section-footer')
+const frontFooter = document.getElementById('front-footer')
+const titleFooter = document.getElementById('title-footer')
+const spanFooter = document.getElementById('span-footer')
+const madeFooter = document.getElementById('made-footer')
+
+
 body.style.background = 'linear-gradient(rgb(2, 0, 19), rgb(1, 0, 10))'
 navbar.style.background = 'rgba(255, 255, 255, .015)'
 cardTheme.style.background = 'rgba(255, 255, 255, .04)'
@@ -208,6 +215,12 @@ textBoxContact.forEach(anchor => {
   anchor.style.color = 'rgb(125, 144, 255)'
 })
 
+footer.style.background = 'linear-gradient(to left, #8759FF, #FF5D59)'
+frontFooter.style.background = 'rgba(0, 0, 0, .9)'
+titleFooter.style.color = '#8759FF'
+spanFooter.style.color = '#FF5D59'
+madeFooter.style.color = 'rgb(125, 144, 255)'
+
 let theme = 'dark'
 button.addEventListener('click', () => {
   if (theme === 'dark') {
@@ -229,7 +242,7 @@ button.addEventListener('click', () => {
     backdropNav.style.background = '#603db9'
 
     profile.style.background = 'rgba(255, 255, 255, .1)'
-    profile.style.borderColor = '#D069FF65'
+    profile.style.borderColor = '#D069FF88'
     imgProfile.style.borderColor = '#D069FF'
     titleProfile.style.color = 'black'
     subtitleProfile.style.color = '#8637aa'
@@ -238,12 +251,12 @@ button.addEventListener('click', () => {
     spanTextProfile.style.color = 'rgb(30, 23, 97)'
  
     projects.style.background = 'rgba(255, 255, 255, .1)'
-    projects.style.borderColor = '#D069FF65'
+    projects.style.borderColor = '#D069FF88'
     backTitleProjects.style.background = 'linear-gradient(to right, rgb(32, 32, 172), #FF5D59)'
     frontTitlteProjects.style.background = '#D069FF74'
     textTitleProjects.style.color = 'rgb(31, 31, 116)'
-    articleProjects.style.background = '#FF5D5957'
-    articleProjects2.style.background = '#FF5D5957'
+    articleProjects.style.background = 'rgba(86, 86, 253, .4)'
+    articleProjects2.style.background = 'rgba(86, 86, 253, .4)'
     articleTitleProjects.style.color = 'rgb(49, 49, 187)'
     articleDescriptionProjects.style.color = 'black'
     articleTitleProjects2.style.color = 'rgb(49, 49, 187)'
@@ -252,7 +265,7 @@ button.addEventListener('click', () => {
     boxTecProjects2.style.background = '#FF5D5957'
 
     about.style.background = 'rgba(255, 255, 255, .1)'
-    about.style.borderColor = '#D069FF65'
+    about.style.borderColor = '#D069FF88'
     titleBackAbout.style.background = 'rgba(86, 86, 253, .4)'
     titleAbout.style.color = 'rgb(31, 31, 116)'
     imageAbout.style.borderColor = '#D069FF'
@@ -274,7 +287,7 @@ button.addEventListener('click', () => {
     })
 
     contact.style.background = 'rgba(255, 255, 255, .1)'
-    contact.style.borderColor = '#D069FF65'
+    contact.style.borderColor = '#D069FF88'
     titleContact.style.color = 'rgb(0, 0, 0)'
     subtitleContact.style.color = 'rgb(31, 31, 116)'
     linkBoxContact.style.background = 'rgba(86, 86, 253, .4)'
@@ -284,6 +297,11 @@ button.addEventListener('click', () => {
     textBoxContact.forEach(anchor => {
       anchor.style.color = 'rgb(13, 13, 13)'
     })
+
+    frontFooter.style.background = 'rgba(255, 255, 255, .4)'
+    titleFooter.style.color = 'rgba(0, 0, 0, .7)'
+    spanFooter.style.color = '#FF5D59'
+    madeFooter.style.color = '#67158d'
 
     theme = 'light'
   } else if (theme === 'light') {
@@ -360,6 +378,11 @@ button.addEventListener('click', () => {
     textBoxContact.forEach(anchor => {
       anchor.style.color = 'rgb(125, 144, 255)'
     })
+
+    frontFooter.style.background = 'rgba(0, 0, 0, .9)'
+    titleFooter.style.color = '#8759FF'
+    spanFooter.style.color = '#FF5D59'
+    madeFooter.style.color = 'rgb(125, 144, 255)'
 
     theme = 'dark'
   }
