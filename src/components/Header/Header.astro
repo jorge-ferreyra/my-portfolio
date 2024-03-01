@@ -33,7 +33,7 @@
   }
   .animate-blurItLight {
     animation: blurItLight linear both;
-    animation-timeline: scroll(root block);
+    animation-timeline: scroll(root block) ;
     animation-range: 0 100px;
   }
   .animate-textDark {
@@ -137,6 +137,10 @@ const titleTecAbout = document.getElementById('title-tek-about')
 const backTecAbout = document.getElementById('back-tek-about')
 const tecTitle = document.querySelectorAll<HTMLElement>('#title-tek')
 const tecTitle2 = document.querySelectorAll<HTMLElement>('#title-tek2')
+const svgGradientInitialA = document.getElementById('svgGradientInitialA')
+const svgGradientFinalA = document.getElementById('svgGradientFinalA')
+const svgGradientInitialB = document.getElementById('svgGradientInitialB')
+const svgGradientFinalB = document.getElementById('svgGradientFinalB')
 
 const contact = document.getElementById('section-contact')
 const titleContact = document.getElementById('title-contact')
@@ -202,6 +206,11 @@ tecTitle2.forEach(h2 => {
   h2.style.background = 'linear-gradient(to right, #FF5D59, rgb(86, 86, 253))'
   h2.style.backgroundClip = 'text'
 })
+svgGradientInitialA.style.stopColor = '#FF5D59'
+svgGradientFinalA.style.stopColor = 'rgb(86, 86, 253)'
+svgGradientInitialB.style.stopColor = 'rgb(86, 86, 253)'
+svgGradientFinalB.style.stopColor = '#FF5D59'
+
 
 contact.style.background = 'rgba(255, 255, 255, .015)'
 contact.style.borderColor = '#8759FF24'
@@ -278,13 +287,17 @@ button.addEventListener('click', () => {
     titleTecAbout.style.color = 'rgb(31, 31, 116)'
     backTecAbout.style.background = 'rgba(255, 255, 255, .1)'
     tecTitle.forEach(h2 => {
-      h2.style.background = 'linear-gradient(to right, rgb(31, 31, 116), #4d3096)'
+      h2.style.background = 'linear-gradient(to right, rgb(49, 49, 172), #4d3096)'
       h2.style.backgroundClip = 'text'
     })
     tecTitle2.forEach(h2 => {
-      h2.style.background = 'linear-gradient(to right, #4d3096, rgb(31, 31, 116))'
+      h2.style.background = 'linear-gradient(to right, #4d3096, rgb(49, 49, 172))'
       h2.style.backgroundClip = 'text'
     })
+    svgGradientInitialA.style.stopColor = '#4d3096'
+    svgGradientFinalA.style.stopColor = 'rgb(49, 49, 172)'
+    svgGradientInitialB.style.stopColor = 'rgb(49, 49, 172)'
+    svgGradientFinalB.style.stopColor = '#4d3096'
 
     contact.style.background = 'rgba(255, 255, 255, .1)'
     contact.style.borderColor = '#D069FF88'
@@ -366,6 +379,10 @@ button.addEventListener('click', () => {
       h2.style.background = 'linear-gradient(to right, #FF5D59, rgb(86, 86, 253))'
       h2.style.backgroundClip = 'text'
     })
+    svgGradientInitialA.style.stopColor = '#FF5D59'
+    svgGradientFinalA.style.stopColor = 'rgb(86, 86, 253)'
+    svgGradientInitialB.style.stopColor = 'rgb(86, 86, 253)'
+    svgGradientFinalB.style.stopColor = '#FF5D59'
 
     contact.style.background = 'rgba(255, 255, 255, .015)'
     contact.style.borderColor = '#8759FF24'
