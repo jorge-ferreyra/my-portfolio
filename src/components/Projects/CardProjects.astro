@@ -1,4 +1,9 @@
 ---
+import CssIcon from '../Icons/CssIcon.astro'
+import JavascriptIcon from '../Icons/JavascriptIcon.astro'
+import ReactIcon from '../Icons/ReactIcon.astro'
+import ReactRouterIcon from '../Icons/ReactRouterIcon.astro'
+
 
 interface Props {
   title: string,
@@ -27,12 +32,12 @@ mobile:h-[240px]">
     <div id={difference ? 'box-tek-projects' : 'box2-tek-projects'} class="w-[110px] h-[30px] flex items-center justify-center gap-[10px] p-[2px] rounded-md mb-[120px] transition-all duration-500 ease-out
     secondq:mb-[130px] fourthq:mb-[105px]
     mobile:flex-col mobile:w-[30px] mobile:h-[100px] mobile:mb-[120px] mobile:mr-[200px]">
-      <img loading="lazy" class="w-[25px]" src="react.svg" alt="">
-      <img loading="lazy" class="w-[20px]" src="css.svg" alt="">
+      <ReactIcon class="w-[20px]" />
+      <CssIcon class="w-[20px]" />
       {
       (difference)
-        ? (<img loading="lazy" class="w-[25px]" src="reactrouter.svg" alt="">)
-        : (<img loading="lazy" class="w-[25px]" src="javascript.svg" alt="">)
+        ? (<ReactRouterIcon class="w-[25px]" />)
+        : (<JavascriptIcon class="w-[25px]" />)
       }
     </div>
     <a class="pb-[115px] pr-[10px] z-50
