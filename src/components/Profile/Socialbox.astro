@@ -1,18 +1,22 @@
 ---
+import GithubIcon from '../Icons/GithubIcon.astro'
+import LinkedinIcon from '../Icons/LinkedinIcon.astro'
 interface Props {
-  svgWhite: string,
-  svgColor: string,
+  social: string,
   link: string
 }
 
-const { svgWhite, svgColor, link }= Astro.props
+const { social, link }= Astro.props
 
 ---
 
 <li class="list-none">
-  <a class="w-[32px] h-[32px] flex items-center relative
+  <a class="w-[38px] h-[38px] flex items-center relative transition-all duration-500 ease-out hover:bg-[#8759FF73] rounded-md
   fourthq:w-[22px] fourthq:h-[22px]" href={link} target="blank">
-    <img class="w-[100%] absolute z-[2] transition-all duration-500 ease-out hover:opacity-0" src={svgWhite} alt="">
-    <img class="w-[100%] absolute z-[1]" src={svgColor} alt="">
+    {
+      social === 'github' 
+        ? <GithubIcon class="w-full h-full text-white" />
+        : <LinkedinIcon class="w-full h-full text-white" />
+    }
   </a>
 </li>

@@ -141,6 +141,7 @@ const svgGradientInitialA = document.getElementById('svgGradientInitialA')
 const svgGradientFinalA = document.getElementById('svgGradientFinalA')
 const svgGradientInitialB = document.getElementById('svgGradientInitialB')
 const svgGradientFinalB = document.getElementById('svgGradientFinalB')
+const svgMiddle = document.querySelectorAll<HTMLElement>('#svgMiddle')
 
 const contact = document.getElementById('section-contact')
 const titleContact = document.getElementById('title-contact')
@@ -210,7 +211,9 @@ svgGradientInitialA.style.stopColor = '#FF5D59'
 svgGradientFinalA.style.stopColor = 'rgb(86, 86, 253)'
 svgGradientInitialB.style.stopColor = 'rgb(86, 86, 253)'
 svgGradientFinalB.style.stopColor = '#FF5D59'
-
+svgMiddle.forEach(item => {
+  item.style.fill = '#fff'
+})
 
 contact.style.background = 'rgba(255, 255, 255, .015)'
 contact.style.borderColor = '#8759FF24'
@@ -281,8 +284,8 @@ button.addEventListener('click', () => {
     articleDescriptionProjects.style.color = 'black'
     articleTitleProjects2.style.color = 'rgb(49, 49, 187)'
     articleDescriptionProjects2.style.color = 'black'
-    boxTecProjects.style.background = '#FF5D5985'
-    boxTecProjects2.style.background = '#FF5D5985'
+    boxTecProjects.style.background = 'rgba(2, 0, 19, .6)'
+    boxTecProjects2.style.background = 'rgba(2, 0, 19, .6)'
 
     about.style.background = 'rgba(255, 255, 255, .1)'
     about.style.borderColor = '#D069FF88'
@@ -293,22 +296,25 @@ button.addEventListener('click', () => {
     textArticleAbout.style.color = 'black'
     spanArticleAbout.style.color = '#67158d'
     tecAbout.style.background = 'rgba(86, 86, 253, .4)'
-    tecBackAbout.style.background = 'linear-gradient(to right, rgb(32, 32, 172), #FF5D59)'
+    tecBackAbout.style.background = 'linear-gradient(to right, rgb(32, 32, 172), #be3d3b)'
     tecFrontAbout.style.background = '#D069FF74'
     titleTecAbout.style.color = 'rgb(31, 31, 116)'
     backTecAbout.style.background = 'rgba(255, 255, 255, .1)'
     tecTitle.forEach(h2 => {
-      h2.style.background = 'linear-gradient(to right, #FF5D59, rgb(49, 49, 172))'
+      h2.style.background = 'linear-gradient(to right, #be3d3b, rgb(49, 49, 172))'
       h2.style.backgroundClip = 'text'
     })
     tecTitle2.forEach(h2 => {
-      h2.style.background = 'linear-gradient(to right, rgb(49, 49, 172), #FF5D59)'
+      h2.style.background = 'linear-gradient(to right, rgb(49, 49, 172), #be3d3b)'
       h2.style.backgroundClip = 'text'
     })
     svgGradientInitialA.style.stopColor = 'rgb(49, 49, 172)'
-    svgGradientFinalA.style.stopColor = '#FF5D59'
-    svgGradientInitialB.style.stopColor = '#FF5D59'
+    svgGradientFinalA.style.stopColor = '#be3d3b'
+    svgGradientInitialB.style.stopColor = '#be3d3b'
     svgGradientFinalB.style.stopColor = 'rgb(49, 49, 172)'
+    svgMiddle.forEach(item => {
+      item.style.fill = '#000000EA'
+    })
 
     contact.style.background = 'rgba(255, 255, 255, .1)'
     contact.style.borderColor = '#D069FF88'
@@ -394,6 +400,9 @@ button.addEventListener('click', () => {
     svgGradientFinalA.style.stopColor = 'rgb(86, 86, 253)'
     svgGradientInitialB.style.stopColor = 'rgb(86, 86, 253)'
     svgGradientFinalB.style.stopColor = '#FF5D59'
+    svgMiddle.forEach(item => {
+      item.style.fill = '#fff'
+    })
 
     contact.style.background = 'rgba(255, 255, 255, .015)'
     contact.style.borderColor = '#8759FF24'
