@@ -41,7 +41,7 @@ export default {
 		extend: {
 			boxShadow: {
 				'crimsonshadow': 'inset 0 0 25px #D069FF55'
-			}
+			},
 		}
 	},
 	plugins: [],
