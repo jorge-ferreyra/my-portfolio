@@ -1,0 +1,443 @@
+<script>
+  let theme = 'dark'
+  let currentTranslate = '26px'
+  let boxShadowColor = '#D069FF63'
+
+  const body = document.querySelector('body')
+  const navbar = document.getElementById('navbar')
+  const childrensNavbar = document.querySelectorAll('#navigate-anchor')
+  const cardTheme = document.getElementById('card-theme')
+  const moonFilled = document.getElementById('moon-filled')
+  const moon = document.getElementById('moon')
+  const textTheme = document.getElementById('text-theme')
+  const button = document.getElementById('button-theme')
+  const span = document.getElementById('span-theme')
+  const sunFilled = document.getElementById('sun-filled')
+  const sun = document.getElementById('sun')
+  const backdropNav = document.getElementById('backdrop')
+  
+  const profile = document.getElementById('section-profile')
+  const imgProfile = document.getElementById('image-profile')
+  const titleProfile = document.getElementById('title-profile')
+  const spanTitleProfile = document.getElementById('span-title-profile')
+  const subtitleProfile = document.getElementById('subtitle-profile')
+  const textProfile = document.getElementById('text-profile')
+  const spanTextProfile = document.getElementById('span-text-profile')
+  
+  const projects = document.getElementById('section-projects')
+  const backTitleProjects = document.getElementById('title-back-projects')
+  const frontTitlteProjects = document.getElementById('title-front-projects')
+  const textTitleProjects = document.getElementById('text-title-projects')
+  const articleProjects = document.getElementById('article-projects')
+  const articleProjects2 = document.getElementById('article2-projects')
+  const articleTitleProjects = document.getElementById('article-title-projects')
+  const articleDescriptionProjects = document.getElementById('article-description-projects')
+  const articleTitleProjects2 = document.getElementById('article2-title-projects')
+  const articleDescriptionProjects2 = document.getElementById('article2-description-projects')
+  const boxTecProjects = document.getElementById('box-tek-projects')
+  const boxTecProjects2 = document.getElementById('box2-tek-projects')
+  const cardProject = document.querySelectorAll<HTMLElement>('#card-project')
+  
+  const about = document.getElementById('section-about')
+  const titleBackAbout = document.getElementById('title-back-about')
+  const titleAbout = document.getElementById('title-about')
+  const imageAbout = document.getElementById('image-about')
+  const articleAbout = document.getElementById('article-about')
+  const textArticleAbout = document.getElementById('text-article-about')
+  const spanArticleAbout = document.getElementById('span-article-about')
+  const tecAbout = document.getElementById('tek-about')
+  const tecBackAbout = document.getElementById('tek-back-about')
+  const tecFrontAbout = document.getElementById('tek-front-about')
+  const titleTecAbout = document.getElementById('title-tek-about')
+  const backTecAbout = document.getElementById('back-tek-about')
+  const tecTitle = document.querySelectorAll<HTMLElement>('#title-tek')
+  const tecTitle2 = document.querySelectorAll<HTMLElement>('#title-tek2')
+  const svgGradientInitialA = document.getElementById('svgGradientInitialA')
+  const svgGradientFinalA = document.getElementById('svgGradientFinalA')
+  const svgGradientInitialB = document.getElementById('svgGradientInitialB')
+  const svgGradientFinalB = document.getElementById('svgGradientFinalB')
+  const svgMiddle = document.querySelectorAll<HTMLElement>('#svgMiddle')
+  
+  const contact = document.getElementById('section-contact')
+  const titleContact = document.getElementById('title-contact')
+  const subtitleContact = document.getElementById('subtitle-contact')
+  const linkBoxContact = document.getElementById('link-box-contact')
+  const boxContact = document.querySelectorAll<HTMLElement>('#box-contact')
+  const textBoxContact = document.querySelectorAll<HTMLElement>('#text-box-contact')
+  
+  const footer = document.getElementById('section-footer')
+  const frontFooter = document.getElementById('front-footer')
+  const titleFooter = document.getElementById('title-footer')
+  const spanFooter = document.getElementById('span-footer')
+  const madeFooter = document.getElementById('made-footer')
+  
+  body.style.background = 'linear-gradient(rgb(2, 0, 19), rgb(1, 0, 10))'
+  navbar.style.background = 'rgba(255, 255, 255, .015)'
+  cardTheme.style.background = 'rgba(255, 255, 255, .04)'
+  textTheme.style.color = 'rgb(148, 148, 255)'
+  backdropNav.style.background = '#D069FF14'
+  moonFilled.style.opacity = '0'
+  sunFilled.style.opacity = '0'
+  sun.style.opacity = '.5'
+  
+  profile.style.background = 'rgba(255, 255, 255, .015)'
+  profile.style.borderColor = '#8759FF24'
+  imgProfile.style.borderColor = 'rgb(86, 86, 253)'
+  titleProfile.style.color = 'rgb(186, 196, 255)'
+  spanTitleProfile.style.color = 'rgb(125, 144, 255)'
+  subtitleProfile.style.color = '#8759FF'
+  textProfile.style.color = 'rgb(186, 196, 255)'
+  spanTextProfile.style.color = 'rgb(186, 196, 255)'
+  
+  projects.style.background = 'rgba(255, 255, 255, .015)'
+  projects.style.borderColor = '#8759FF24'
+  backTitleProjects.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
+  frontTitlteProjects.style.background = 'rgb(6, 4, 18)'
+  textTitleProjects.style.color = 'rgb(125, 144, 255)'
+  articleProjects.style.background = 'rgba(86, 86, 253, .15)'
+  articleProjects2.style.background = 'rgba(86, 86, 253, .15)'
+  articleTitleProjects.style.color = 'rgb(125, 144, 255)'
+  articleDescriptionProjects.style.color = 'rgb(186, 196, 255)'
+  articleTitleProjects2.style.color = 'rgb(125, 144, 255)'
+  articleDescriptionProjects2.style.color = 'rgb(186, 196, 255)'
+  boxTecProjects.style.background = 'rgba(86, 86, 253, .4)'
+  boxTecProjects2.style.background = 'rgba(86, 86, 253, .4)'
+  cardProject.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      handleEnterMouse(item, boxShadowColor, true)
+    })
+    item.addEventListener('mouseleave', () => {
+      handleRemoveMouse(item, true)
+    })
+  })
+  
+  about.style.background = 'rgba(255, 255, 255, .015)'
+  about.style.borderColor = '#8759FF24'
+  titleBackAbout.style.background = 'rgba(86, 86, 253, .15)'
+  titleAbout.style.color = 'rgb(125, 144, 255)'
+  imageAbout.style.borderColor = '#FF5D59'
+  articleAbout.style.background = 'rgba(86, 86, 253, .15)'
+  textArticleAbout.style.color = 'rgb(186, 196, 255)'
+  spanArticleAbout.style.color = 'rgb(125, 144, 255)'
+  tecAbout.style.background = 'rgba(86, 86, 253, .15)'
+  tecBackAbout.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
+  tecFrontAbout.style.background = 'rgb(6, 4, 18)'
+  titleTecAbout.style.color = 'rgb(125, 144, 255)'
+  backTecAbout.style.background = '#D069FF14'
+  tecTitle.forEach(h2 => {
+    h2.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
+    h2.style.backgroundClip = 'text'
+  })
+  tecTitle2.forEach(h2 => {
+    h2.style.background = 'linear-gradient(to right, #FF5D59, rgb(86, 86, 253))'
+    h2.style.backgroundClip = 'text'
+  })
+  svgGradientInitialA.style.stopColor = '#FF5D59'
+  svgGradientFinalA.style.stopColor = 'rgb(86, 86, 253)'
+  svgGradientInitialB.style.stopColor = 'rgb(86, 86, 253)'
+  svgGradientFinalB.style.stopColor = '#FF5D59'
+  svgMiddle.forEach(item => {
+    item.style.fill = '#fff'
+  })
+  
+  contact.style.background = 'rgba(255, 255, 255, .015)'
+  contact.style.borderColor = '#8759FF24'
+  titleContact.style.color = 'rgb(186, 196, 255)'
+  subtitleContact.style.color = 'rgb(125, 144, 255)'
+  linkBoxContact.style.background = '#8759FF24'
+  boxContact.forEach(div => {
+    div.style.background = 'rgba(86, 86, 253, .15)'
+    div.addEventListener('mouseenter', () => {
+      handleEnterMouse(div, boxShadowColor, false)
+    })
+    div.addEventListener('mouseleave', () => {
+      handleRemoveMouse(div, false)
+    })
+  })
+  textBoxContact.forEach(anchor => {
+    anchor.style.color = 'rgb(125, 144, 255)'
+  })
+  
+  footer.style.background = 'linear-gradient(to left, #8759FF, #FF5D59)'
+  frontFooter.style.background = 'rgba(0, 0, 0, .9)'
+  titleFooter.style.color = '#8759FF'
+  spanFooter.style.color = '#FF5D59'
+  madeFooter.style.color = 'rgb(125, 144, 255)'
+
+  function handleTranslate (width) {
+    if (theme === 'light') {
+      if (width > 1250) {
+        if (currentTranslate !== '26px')
+          span.style.translate = '26px'
+          currentTranslate = '26px'
+        }
+      if (width <= 1250 && width > 935) {
+        if (currentTranslate !== '24px')
+        span.style.translate = '24px'
+        currentTranslate = '24px'
+      }
+      if (width <= 935 && width > 500) {
+        if (currentTranslate !== '15px')
+        span.style.translate = '15px'
+        currentTranslate = '15px'
+      }
+      if (width <= 500) {
+        if (currentTranslate !== '17px')
+        span.style.translate = '17px'
+        currentTranslate = '17px'
+      } 
+    } else {
+      if (width > 1250) {
+          currentTranslate = '26px'
+        }
+      if (width <= 1250 && width > 935) {
+        currentTranslate = '24px'
+      }
+      if (width <= 935 && width > 500) {
+        currentTranslate = '15px'
+      }
+      if (width <= 500) {
+        currentTranslate = '17px'
+      } 
+      span.style.translate = '0'
+    }
+  }
+
+  window.addEventListener('load', () => {
+    handleTranslate(window.innerWidth)
+  })
+
+  window.addEventListener('resize', () => {
+    handleTranslate(window.innerWidth)
+  })
+
+  function handleEnterMouse(item, color, opacity) {
+    item.style.transition = 'all .5s ease-out'
+    item.style.boxShadow = `inset 0 0 20px ${color}`
+    opacity ? item.style.opacity = '1' : null
+  }
+  function handleRemoveMouse(item, opacity){
+    item.style.transition = 'all .5s ease-out'
+    item.style.boxShadow = 'none'
+    opacity ? item.style.opacity = '0' : null
+  }
+
+  button.addEventListener('click', () => {
+    if (theme === 'dark') {
+      boxShadowColor = 'rgba(86, 86, 253, .7)'
+
+      moonFilled.style.opacity = '.5'
+      moon.style.opacity = '0'
+
+      span.style.translate = currentTranslate
+      span.style.background = '#8759FF'
+      textTheme.style.color = 'rgb(31, 31, 116)'
+      sun.style.opacity = '0'
+      sunFilled.style.opacity = '1'
+      body.style.background = 'linear-gradient(rgba(86, 86, 253, .84), #D069FF84)'
+      navbar.style.background = 'rgba(0, 0, 0, .5)'
+      navbar.classList.remove('animate-blurItDark')
+      navbar.classList.add('animate-blurItLight')
+      childrensNavbar.forEach(anchor => {
+        anchor.classList.remove('animate-textDark')
+        anchor.classList.add('animate-textLight')
+      })
+      cardTheme.style.background = 'rgba(0, 0, 0, .5)'
+      cardTheme.classList.remove('animate-blurItDark')
+      cardTheme.classList.add('animate-blurItLight')
+      backdropNav.style.background = '#603db9'
+  
+      profile.style.background = 'rgba(255, 255, 255, .1)'
+      profile.style.borderColor = '#D069FF88'
+      imgProfile.style.borderColor = '#D069FF'
+      titleProfile.style.color = 'black'
+      subtitleProfile.style.color = '#8637aa'
+      textProfile.style.color = 'black'
+      spanTitleProfile.style.color = 'rgb(31, 31, 116)'
+      spanTextProfile.style.color = 'rgb(30, 23, 97)'
+   
+      projects.style.background = 'rgba(255, 255, 255, .1)'
+      projects.style.borderColor = '#D069FF88'
+      backTitleProjects.style.background = 'linear-gradient(to right, rgb(32, 32, 172), #FF5D59)'
+      frontTitlteProjects.style.background = '#D069FF74'
+      textTitleProjects.style.color = 'rgb(31, 31, 116)'
+      articleProjects.style.background = 'rgba(86, 86, 253, .4)'
+      articleProjects2.style.background = 'rgba(86, 86, 253, .4)'
+      articleTitleProjects.style.color = 'rgb(49, 49, 187)'
+      articleDescriptionProjects.style.color = 'black'
+      articleTitleProjects2.style.color = 'rgb(49, 49, 187)'
+      articleDescriptionProjects2.style.color = 'black'
+      boxTecProjects.style.background = 'rgba(2, 0, 19, .6)'
+      boxTecProjects2.style.background = 'rgba(2, 0, 19, .6)'
+      cardProject.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+          handleEnterMouse(item, boxShadowColor, true)
+        })
+        item.addEventListener('mouseleave', () => {
+          handleRemoveMouse(item, true)
+        })
+      })
+  
+      about.style.background = 'rgba(255, 255, 255, .1)'
+      about.style.borderColor = '#D069FF88'
+      titleBackAbout.style.background = 'rgba(86, 86, 253, .4)'
+      titleAbout.style.color = 'rgb(31, 31, 116)'
+      imageAbout.style.borderColor = '#D069FF'
+      articleAbout.style.background = 'rgba(86, 86, 253, .4)'
+      textArticleAbout.style.color = 'black'
+      spanArticleAbout.style.color = '#67158d'
+      tecAbout.style.background = 'rgba(86, 86, 253, .4)'
+      tecBackAbout.style.background = 'linear-gradient(to right, rgb(32, 32, 172), #be3d3b)'
+      tecFrontAbout.style.background = '#D069FF74'
+      titleTecAbout.style.color = 'rgb(31, 31, 116)'
+      backTecAbout.style.background = 'rgba(255, 255, 255, .1)'
+      tecTitle.forEach(h2 => {
+        h2.style.background = 'linear-gradient(to right, #be3d3b, rgb(49, 49, 172))'
+        h2.style.backgroundClip = 'text'
+      })
+      tecTitle2.forEach(h2 => {
+        h2.style.background = 'linear-gradient(to right, rgb(49, 49, 172), #be3d3b)'
+        h2.style.backgroundClip = 'text'
+      })
+      svgGradientInitialA.style.stopColor = 'rgb(49, 49, 172)'
+      svgGradientFinalA.style.stopColor = '#be3d3b'
+      svgGradientInitialB.style.stopColor = '#be3d3b'
+      svgGradientFinalB.style.stopColor = 'rgb(49, 49, 172)'
+      svgMiddle.forEach(item => {
+        item.style.fill = 'rgb(21, 21, 85)'
+      })
+  
+      contact.style.background = 'rgba(255, 255, 255, .1)'
+      contact.style.borderColor = '#D069FF88'
+      titleContact.style.color = 'rgb(0, 0, 0)'
+      subtitleContact.style.color = 'rgb(31, 31, 116)'
+      linkBoxContact.style.background = 'rgba(86, 86, 253, .4)'
+      boxContact.forEach(div => {
+        div.style.background = 'rgba(255, 255, 255, .2)'
+        div.addEventListener('mouseenter', () => {
+          handleEnterMouse(div, boxShadowColor, false)
+        })
+        div.addEventListener('mouseleave', () => {
+          handleRemoveMouse(div, false)
+        })
+      })
+      textBoxContact.forEach(anchor => {
+        anchor.style.color = 'rgb(31, 31, 116)'
+      })
+  
+      frontFooter.style.background = 'rgba(255, 255, 255, .4)'
+      titleFooter.style.color = 'rgba(0, 0, 0, .7)'
+      spanFooter.style.color = 'rgb(31, 31, 116)'
+      madeFooter.style.color = '#67158d'
+  
+      theme = 'light'
+    } else if (theme === 'light') {
+      boxShadowColor = '#D069FF63'
+
+      moonFilled.style.opacity = '0'
+      moon.style.opacity = '1'
+      span.style.translate = '0'
+      span.style.background = 'rgb(148, 148, 255)'
+      textTheme.style.color = 'rgb(148, 148, 255)'
+      sun.style.opacity = '.5'
+      sunFilled.style.opacity = '0'
+      body.style.background = 'linear-gradient(rgb(2, 0, 19), rgb(1, 0, 10))'
+      navbar.style.background = 'rgba(255, 255, 255, .015)'
+      navbar.classList.remove('animate-blurItLight')
+      navbar.classList.add('animate-blurItDark')
+      childrensNavbar.forEach(anchor => {
+        anchor.classList.remove('animate-textLight')
+        anchor.classList.add('animate-textDark')
+      })
+      cardTheme.style.background = 'rgba(255, 255, 255, .04)'
+      cardTheme.classList.remove('animate-blurItLight')
+      cardTheme.classList.add('animate-blurItDark')
+      backdropNav.style.background = '#D069FF14'
+  
+      profile.style.background = 'rgba(255, 255, 255, .015)'
+      profile.style.borderColor = '#8759FF24'
+      imgProfile.style.borderColor = 'rgb(86, 86, 253)'
+      titleProfile.style.color = 'rgb(186, 196, 255)'
+      subtitleProfile.style.color = '#8759FF'
+      textProfile.style.color = 'rgb(186, 196, 255)'
+      spanTitleProfile.style.color = 'rgb(125, 144, 255)'
+      spanTextProfile.style.color = 'rgb(186, 196, 255)'
+  
+      projects.style.background = 'rgba(255, 255, 255, .015)'
+      projects.style.borderColor = '#8759FF24'
+      backTitleProjects.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
+      frontTitlteProjects.style.background = 'rgb(6, 4, 18)'
+      textTitleProjects.style.color = 'rgb(125, 144, 255)'
+      articleProjects.style.background = 'rgba(86, 86, 253, .15)'
+      articleProjects2.style.background = 'rgba(86, 86, 253, .15)'
+      articleTitleProjects.style.color = 'rgb(125, 144, 255)'
+      articleDescriptionProjects.style.color = 'rgb(186, 196, 255)'
+      articleTitleProjects2.style.color = 'rgb(125, 144, 255)'
+      articleDescriptionProjects2.style.color = 'rgb(186, 196, 255)'
+      boxTecProjects.style.background = 'rgba(86, 86, 253, .4)'
+      boxTecProjects2.style.background = 'rgba(86, 86, 253, .4)'
+      cardProject.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+          handleEnterMouse(item, boxShadowColor, true)
+        })
+        item.addEventListener('mouseleave', () => {
+          handleRemoveMouse(item, true)
+        })
+      })
+  
+      about.style.background = 'rgba(255, 255, 255, .015)'
+      about.style.borderColor = '#8759FF24'
+      titleBackAbout.style.background = 'rgba(86, 86, 253, .15)'
+      titleAbout.style.color = 'rgb(125, 144, 255)'
+      imageAbout.style.borderColor = '#FF5D59'
+      articleAbout.style.background = 'rgba(86, 86, 253, .15)'
+      textArticleAbout.style.color = 'rgb(186, 196, 255)'
+      spanArticleAbout.style.color = 'rgb(125, 144, 255)'
+      tecAbout.style.background = 'rgba(86, 86, 253, .15)'
+      tecBackAbout.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
+      tecFrontAbout.style.background = 'rgb(6, 4, 18)'
+      titleTecAbout.style.color = 'rgb(125, 144, 255)'
+      backTecAbout.style.background = '#D069FF14'
+      tecTitle.forEach(h2 => {
+        h2.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
+        h2.style.backgroundClip = 'text'
+      })
+      tecTitle2.forEach(h2 => {
+        h2.style.background = 'linear-gradient(to right, #FF5D59, rgb(86, 86, 253))'
+        h2.style.backgroundClip = 'text'
+      })
+      svgGradientInitialA.style.stopColor = '#FF5D59'
+      svgGradientFinalA.style.stopColor = 'rgb(86, 86, 253)'
+      svgGradientInitialB.style.stopColor = 'rgb(86, 86, 253)'
+      svgGradientFinalB.style.stopColor = '#FF5D59'
+      svgMiddle.forEach(item => {
+        item.style.fill = '#fff'
+      })
+  
+      contact.style.background = 'rgba(255, 255, 255, .015)'
+      contact.style.borderColor = '#8759FF24'
+      titleContact.style.color = 'rgb(186, 196, 255)'
+      subtitleContact.style.color = 'rgb(125, 144, 255)'
+      linkBoxContact.style.background = '#8759FF24'
+      boxContact.forEach(div => {
+        div.style.background = 'rgba(86, 86, 253, .15)'
+        div.addEventListener('mouseenter', () => {
+          handleEnterMouse(div, boxShadowColor, false)
+        })
+        div.addEventListener('mouseleave', () => {
+          handleRemoveMouse(div, false)
+        })
+      })
+      textBoxContact.forEach(anchor => {
+        anchor.style.color = 'rgb(125, 144, 255)'
+      })
+  
+      frontFooter.style.background = 'rgba(0, 0, 0, .9)'
+      titleFooter.style.color = '#8759FF'
+      spanFooter.style.color = '#FF5D59'
+      madeFooter.style.color = 'rgb(125, 144, 255)'
+  
+      theme = 'dark'
+    }
+  })
+</script>
