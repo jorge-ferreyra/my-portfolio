@@ -11,12 +11,12 @@ const { social, link }= Astro.props
 ---
 
 <li class="list-none">
-  <a class="w-[38px] h-[38px] flex items-center relative transition-all duration-500 ease-out hover:bg-[#8759FF73] rounded-md
+  <a aria-label="socialbox" class="w-[38px] h-[38px] flex items-center relative transition-all duration-500 ease-out hover:bg-[#8759FF73] rounded-md
   fourthq:w-[22px] fourthq:h-[22px]" href={link} target="blank">
     {
       social === 'github' 
-        ? <GithubIcon class="w-full h-full text-white" />
-        : <LinkedinIcon class="w-full h-full text-white" />
+        ? <GithubIcon aria-label="socialbox" class="w-full h-full text-white" />
+        : <LinkedinIcon aria-label="socialbox" class="w-full h-full text-white" />
     }
   </a>
 </li>

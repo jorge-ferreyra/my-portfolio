@@ -1,35 +1,38 @@
 ---
+import ReactShopImage from './ReactShopImage.astro'
+import CybertruckImage from './CybertruckImage.astro'
 import CssIcon from '../Icons/CssIcon.astro'
 import GithubIcon from '../Icons/GithubIcon.astro'
 import JavascriptIcon from '../Icons/JavascriptIcon.astro'
 import ReactIcon from '../Icons/ReactIcon.astro'
 import ReactRouterIcon from '../Icons/ReactRouterIcon.astro'
 
-
 interface Props {
   title: string,
-  img: string,
   link: string,
   description: string,
   repository: string,
   difference: boolean
 }
 
-const { title, img, link, description, repository, difference } = Astro.props
-
+const { title, link, description, repository, difference } = Astro.props
 ---
 
 <section class="w-full h-[520px] relative rounded-lg transition-all duration-500 ease-out
 secondq:h-[420px] thirdq:h-[360px] fourthq:h-[280px]
 mobile:h-[240px]">
   <header class="w-full h-[full] rounded-lg z-[-1] relative">
-    <img loading="lazy" class="w-full h-full rounded-lg -z-50" src={img} alt="">
+    {
+      title === 'React Shop'
+        ? <ReactShopImage />
+        : <CybertruckImage />
+    }
   </header>
 
-  <div id="card-project" class="w-full h-full z-20 flex justify-end items-end gap-[10px] opacity-0 rounded-lg
+  <div id="card-project" aria-label="project-card" class="w-full h-full z-20 flex justify-end items-end gap-[10px] opacity-0 rounded-lg
   absolute bottom-0
   mobile:opacity-100">
-    <a class="w-full h-full absolute inset-0 cursor-pointer z-10" href={link} target="blank"></a>
+    <a aria-label="project-card" class="w-full h-full absolute inset-0 cursor-pointer z-10" href={link} target="blank"></a>
     <div id={difference ? 'box-tek-projects' : 'box2-tek-projects'} class="w-[110px] h-[30px] flex items-center justify-center gap-[10px] p-[2px] rounded-md mb-[120px] transition-all duration-500 ease-out
     secondq:mb-[130px] fourthq:mb-[105px]
     mobile:flex-col mobile:w-[30px] mobile:h-[100px] mobile:mb-[120px] mobile:mr-[200px]">
@@ -41,10 +44,10 @@ mobile:h-[240px]">
         : (<JavascriptIcon class="w-[23px] h-[23px]" />)
       }
     </div>
-    <a class="pb-[115px] pr-[10px] z-50
+    <a aria-label="project-repository" class="pb-[115px] pr-[10px] z-50
     secondq:pb-[125px] fourthq:pb-[100px]
     mobile:pb-[147px]" href={repository} target="blank">
-      <GithubIcon class="bg-black rounded-xl p-[2px] w-[50px] h-[40px] text-white" />
+      <GithubIcon aria-label="project-repository" class="bg-black rounded-xl p-[2px] w-[50px] h-[40px] text-white" />
     </a>
   </div>
 
