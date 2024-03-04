@@ -1,17 +1,18 @@
 ---
+import HandleTheme from './HandleTheme.astro'
 ---
 
 <style>
   @keyframes blurItDark {
     to {
-      background-color: rgba(86, 86, 253, .3) ;
+      background-color: rgba(86, 86, 253, .3);
       backdrop-filter: blur(6px);
       color: black;
     }
   }
   @keyframes blurItLight {
     to {
-      background-color: rgba(54, 54, 173, 0.7) ;
+      background-color: rgba(54, 54, 173, 0.7);
       backdrop-filter: blur(6px);
       color: white;
     }
@@ -70,364 +71,36 @@
       fourthq:text-[12px] fourthq:py-[15px] mobile:text-[10px]" href="#section-contact">Contacto</a>
     </li>
     <li id="card-theme" class="px-2 w-[140px] h-full flex justify-center items-center gap-2 rounded-xl absolute right-6 animate-blurItDark
-    transition-all duration-500 ease-in-out hover:bg-magicrose group
+    transition-all duration-500 ease-in-out group
     secondq:w-[120px] thirdq:w-[100px] mobile:right-2 mobile:w-[95px] mobile:px-[4px]">
-      
-      <img id="moon" class="w-[30px] h-[30px] transition-all duration-500 ease-out
-      secondq:w-[22px] secondq:h-[22px] thirdq:w-[17px] thirdq:h-[17px]" src="moon-filled.svg" alt="">
-
-      <button id="button-theme" class="w-[80%] h-[50%] bg-ocean rounded-lg relative z-10 transition-all duration-500 ease-out
-      secondq:w-[90%] thirdq:w-[100%]">
+    <p id="text-theme" class="absolute text-[11px] top-[-20px] left-[50%] translate-x-[-50%] font-bold opacity-0 transition-all duration-500 ease-out
+    thirdq:top-[-20px] thirdq:text-[9px] group-hover:opacity-100">Temas</p>
+    <div class="w-[30px] h-[30px] secondq:w-[22px] secondq:h-[22px] thirdq:w-[17px] thirdq:h-[17px] relative">
+      <img id="moon-filled" class="w-full h-full transition-all duration-1000 ease-out" src="moon-filled.svg" alt="">
+      <img id="moon" class="w-full h-full absolute top-0 left-0 transition-all duration-1000 ease-out" src="moon.svg" alt="">
+    </div>
+      <button id="button-theme" class="w-[48px] h-[50%] bg-ocean rounded-lg relative z-10 transition-all duration-500 ease-out
+      secondq:w-[44px] thirdq:w-[34px] mobile:w-[37px]">
         <span id="span-theme" class="w-[15px] h-[15px] absolute left-[4px] top-[5px] rounded-sm bg-lightsea z-20
-        transition-all duration-500 ease-in-out group-hover:bg-boldsea
+        transition-all duration-500 ease-in-out
         thirdq:h-[12px] thirdq:top-[4px] secondq:w-[12px]"></span>
       </button>
       
-      <img id="sun" class="w-[30px] h-[30px] transition-all duration-500 ease-out
-      secondq:w-[22px] secondq:h-[22px] thirdq:w-[17px] thirdq:h-[17px]" src="sun-filled.svg" alt="">
+      <div class="w-[30px] h-[30px] secondq:w-[22px] secondq:h-[22px] thirdq:w-[17px] thirdq:h-[17px] relative">
+        <img id="sun-filled" class="w-full h-full transition-all duration-1000 ease-out" src="sun-filled.svg" alt="">
+        <img id="sun" class="w-full h-full absolute top-0 left-0 transition-all duration-1000 ease-out" src="sun.svg" alt="">
+      </div>
+      
     </li>
     
   </ul>
   <div id="backdrop" style=" border-radius: 12px; position: absolute; left: 50%; translateX: -50%; top: 0; width: 0; height: 0; transition: all .6s ease-out; overflow: hidden; opacity: 0; z-index: -10;"></div>
 </header>
 
-<script>
-const body = document.querySelector('body')
-const navbar = document.getElementById('navbar')
-const childrensNavbar = document.querySelectorAll('#navigate-anchor')
-const cardTheme = document.getElementById('card-theme')
-const moon = document.getElementById('moon')
-const button = document.getElementById('button-theme')
-const span = document.getElementById('span-theme')
-const sun = document.getElementById('sun')
-const backdropNav = document.getElementById('backdrop')
-
-const profile = document.getElementById('section-profile')
-const imgProfile = document.getElementById('image-profile')
-const titleProfile = document.getElementById('title-profile')
-const spanTitleProfile = document.getElementById('span-title-profile')
-const subtitleProfile = document.getElementById('subtitle-profile')
-const textProfile = document.getElementById('text-profile')
-const spanTextProfile = document.getElementById('span-text-profile')
-
-const projects = document.getElementById('section-projects')
-const backTitleProjects = document.getElementById('title-back-projects')
-const frontTitlteProjects = document.getElementById('title-front-projects')
-const textTitleProjects = document.getElementById('text-title-projects')
-const articleProjects = document.getElementById('article-projects')
-const articleProjects2 = document.getElementById('article2-projects')
-const articleTitleProjects = document.getElementById('article-title-projects')
-const articleDescriptionProjects = document.getElementById('article-description-projects')
-const articleTitleProjects2 = document.getElementById('article2-title-projects')
-const articleDescriptionProjects2 = document.getElementById('article2-description-projects')
-const boxTecProjects = document.getElementById('box-tek-projects')
-const boxTecProjects2 = document.getElementById('box2-tek-projects')
-
-const about = document.getElementById('section-about')
-const titleBackAbout = document.getElementById('title-back-about')
-const titleAbout = document.getElementById('title-about')
-const imageAbout = document.getElementById('image-about')
-const articleAbout = document.getElementById('article-about')
-const textArticleAbout = document.getElementById('text-article-about')
-const spanArticleAbout = document.getElementById('span-article-about')
-const tecAbout = document.getElementById('tek-about')
-const tecBackAbout = document.getElementById('tek-back-about')
-const tecFrontAbout = document.getElementById('tek-front-about')
-const titleTecAbout = document.getElementById('title-tek-about')
-const backTecAbout = document.getElementById('back-tek-about')
-const tecTitle = document.querySelectorAll<HTMLElement>('#title-tek')
-const tecTitle2 = document.querySelectorAll<HTMLElement>('#title-tek2')
-const svgGradientInitialA = document.getElementById('svgGradientInitialA')
-const svgGradientFinalA = document.getElementById('svgGradientFinalA')
-const svgGradientInitialB = document.getElementById('svgGradientInitialB')
-const svgGradientFinalB = document.getElementById('svgGradientFinalB')
-const svgMiddle = document.querySelectorAll<HTMLElement>('#svgMiddle')
-
-const contact = document.getElementById('section-contact')
-const titleContact = document.getElementById('title-contact')
-const subtitleContact = document.getElementById('subtitle-contact')
-const linkBoxContact = document.getElementById('link-box-contact')
-const boxContact = document.querySelectorAll<HTMLElement>('#box-contact')
-const textBoxContact = document.querySelectorAll<HTMLElement>('#text-box-contact')
-
-const footer = document.getElementById('section-footer')
-const frontFooter = document.getElementById('front-footer')
-const titleFooter = document.getElementById('title-footer')
-const spanFooter = document.getElementById('span-footer')
-const madeFooter = document.getElementById('made-footer')
-
-body.style.background = 'linear-gradient(rgb(2, 0, 19), rgb(1, 0, 10))'
-navbar.style.background = 'rgba(255, 255, 255, .015)'
-cardTheme.style.background = 'rgba(255, 255, 255, .04)'
-backdropNav.style.background = '#D069FF14'
-sun.style.opacity = '.5'
-
-profile.style.background = 'rgba(255, 255, 255, .015)'
-profile.style.borderColor = '#8759FF24'
-imgProfile.style.borderColor = 'rgb(86, 86, 253)'
-titleProfile.style.color = 'rgb(186, 196, 255)'
-spanTitleProfile.style.color = 'rgb(125, 144, 255)'
-subtitleProfile.style.color = '#8759FF'
-textProfile.style.color = 'rgb(186, 196, 255)'
-spanTextProfile.style.color = 'rgb(186, 196, 255)'
-
-projects.style.background = 'rgba(255, 255, 255, .015)'
-projects.style.borderColor = '#8759FF24'
-backTitleProjects.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
-frontTitlteProjects.style.background = 'rgb(6, 4, 18)'
-textTitleProjects.style.color = 'rgb(125, 144, 255)'
-articleProjects.style.background = 'rgba(86, 86, 253, .15)'
-articleProjects2.style.background = 'rgba(86, 86, 253, .15)'
-articleTitleProjects.style.color = 'rgb(125, 144, 255)'
-articleDescriptionProjects.style.color = 'rgb(186, 196, 255)'
-articleTitleProjects2.style.color = 'rgb(125, 144, 255)'
-articleDescriptionProjects2.style.color = 'rgb(186, 196, 255)'
-boxTecProjects.style.background = 'rgba(86, 86, 253, .4)'
-boxTecProjects2.style.background = 'rgba(86, 86, 253, .4)'
-
-about.style.background = 'rgba(255, 255, 255, .015)'
-about.style.borderColor = '#8759FF24'
-titleBackAbout.style.background = 'rgba(86, 86, 253, .15)'
-titleAbout.style.color = 'rgb(125, 144, 255)'
-imageAbout.style.borderColor = '#FF5D59'
-articleAbout.style.background = 'rgba(86, 86, 253, .15)'
-textArticleAbout.style.color = 'rgb(186, 196, 255)'
-spanArticleAbout.style.color = 'rgb(125, 144, 255)'
-tecAbout.style.background = 'rgba(86, 86, 253, .15)'
-tecBackAbout.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
-tecFrontAbout.style.background = 'rgb(6, 4, 18)'
-titleTecAbout.style.color = 'rgb(125, 144, 255)'
-backTecAbout.style.background = '#D069FF14'
-tecTitle.forEach(h2 => {
-  h2.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
-  h2.style.backgroundClip = 'text'
-})
-tecTitle2.forEach(h2 => {
-  h2.style.background = 'linear-gradient(to right, #FF5D59, rgb(86, 86, 253))'
-  h2.style.backgroundClip = 'text'
-})
-svgGradientInitialA.style.stopColor = '#FF5D59'
-svgGradientFinalA.style.stopColor = 'rgb(86, 86, 253)'
-svgGradientInitialB.style.stopColor = 'rgb(86, 86, 253)'
-svgGradientFinalB.style.stopColor = '#FF5D59'
-svgMiddle.forEach(item => {
-  item.style.fill = '#fff'
-})
-
-
-contact.style.background = 'rgba(255, 255, 255, .015)'
-contact.style.borderColor = '#8759FF24'
-titleContact.style.color = 'rgb(186, 196, 255)'
-subtitleContact.style.color = 'rgb(125, 144, 255)'
-linkBoxContact.style.background = '#8759FF24'
-boxContact.forEach(div => {
-  div.style.background = 'rgba(86, 86, 253, .15)'
-})
-textBoxContact.forEach(anchor => {
-  anchor.style.color = 'rgb(125, 144, 255)'
-})
-
-footer.style.background = 'linear-gradient(to left, #8759FF, #FF5D59)'
-frontFooter.style.background = 'rgba(0, 0, 0, .9)'
-titleFooter.style.color = '#8759FF'
-spanFooter.style.color = '#FF5D59'
-madeFooter.style.color = 'rgb(125, 144, 255)'
-let widthWindow = window.innerWidth
-
-let theme = 'dark'
-button.addEventListener('click', () => {
-  if (theme === 'dark') {
-    widthWindow = window.innerWidth
-    moon.style.opacity = '.5'
-    if (widthWindow > 1250) {
-      span.style.transform = 'translate(26px, 0)'
-    } else if (widthWindow <= 1250 && widthWindow > 935) {
-      span.style.transform = 'translate(24px, 0)'
-    } else if (widthWindow <= 935 && widthWindow > 500) {
-      span.style.transform = 'translate(15px, 0)'
-    } else if (widthWindow <= 500) {
-      span.style.transform = 'translate(17px, 0)'
-    } 
-    
-    span.style.background = '#8759FF'
-    sun.style.opacity = '1'
-    body.style.background = 'linear-gradient(rgba(86, 86, 253, .84), #D069FF84)'
-    navbar.style.background = 'rgba(0, 0, 0, .5)'
-    navbar.classList.remove('animate-blurItDark')
-    navbar.classList.add('animate-blurItLight')
-    childrensNavbar.forEach(anchor => {
-      anchor.classList.remove('animate-textDark')
-      anchor.classList.add('animate-textLight')
-    })
-    cardTheme.style.background = 'rgba(0, 0, 0, .5)'
-    cardTheme.classList.remove('animate-blurItDark')
-    cardTheme.classList.add('animate-blurItLight')
-    backdropNav.style.background = '#603db9'
-
-    profile.style.background = 'rgba(255, 255, 255, .1)'
-    profile.style.borderColor = '#D069FF88'
-    imgProfile.style.borderColor = '#D069FF'
-    titleProfile.style.color = 'black'
-    subtitleProfile.style.color = '#8637aa'
-    textProfile.style.color = 'black'
-    spanTitleProfile.style.color = 'rgb(31, 31, 116)'
-    spanTextProfile.style.color = 'rgb(30, 23, 97)'
- 
-    projects.style.background = 'rgba(255, 255, 255, .1)'
-    projects.style.borderColor = '#D069FF88'
-    backTitleProjects.style.background = 'linear-gradient(to right, rgb(32, 32, 172), #FF5D59)'
-    frontTitlteProjects.style.background = '#D069FF74'
-    textTitleProjects.style.color = 'rgb(31, 31, 116)'
-    articleProjects.style.background = 'rgba(86, 86, 253, .4)'
-    articleProjects2.style.background = 'rgba(86, 86, 253, .4)'
-    articleTitleProjects.style.color = 'rgb(49, 49, 187)'
-    articleDescriptionProjects.style.color = 'black'
-    articleTitleProjects2.style.color = 'rgb(49, 49, 187)'
-    articleDescriptionProjects2.style.color = 'black'
-    boxTecProjects.style.background = 'rgba(2, 0, 19, .6)'
-    boxTecProjects2.style.background = 'rgba(2, 0, 19, .6)'
-
-    about.style.background = 'rgba(255, 255, 255, .1)'
-    about.style.borderColor = '#D069FF88'
-    titleBackAbout.style.background = 'rgba(86, 86, 253, .4)'
-    titleAbout.style.color = 'rgb(31, 31, 116)'
-    imageAbout.style.borderColor = '#D069FF'
-    articleAbout.style.background = 'rgba(86, 86, 253, .4)'
-    textArticleAbout.style.color = 'black'
-    spanArticleAbout.style.color = '#67158d'
-    tecAbout.style.background = 'rgba(86, 86, 253, .4)'
-    tecBackAbout.style.background = 'linear-gradient(to right, rgb(32, 32, 172), #be3d3b)'
-    tecFrontAbout.style.background = '#D069FF74'
-    titleTecAbout.style.color = 'rgb(31, 31, 116)'
-    backTecAbout.style.background = 'rgba(255, 255, 255, .1)'
-    tecTitle.forEach(h2 => {
-      h2.style.background = 'linear-gradient(to right, #be3d3b, rgb(49, 49, 172))'
-      h2.style.backgroundClip = 'text'
-    })
-    tecTitle2.forEach(h2 => {
-      h2.style.background = 'linear-gradient(to right, rgb(49, 49, 172), #be3d3b)'
-      h2.style.backgroundClip = 'text'
-    })
-    svgGradientInitialA.style.stopColor = 'rgb(49, 49, 172)'
-    svgGradientFinalA.style.stopColor = '#be3d3b'
-    svgGradientInitialB.style.stopColor = '#be3d3b'
-    svgGradientFinalB.style.stopColor = 'rgb(49, 49, 172)'
-    svgMiddle.forEach(item => {
-      item.style.fill = '#000000EA'
-    })
-
-    contact.style.background = 'rgba(255, 255, 255, .1)'
-    contact.style.borderColor = '#D069FF88'
-    titleContact.style.color = 'rgb(0, 0, 0)'
-    subtitleContact.style.color = 'rgb(31, 31, 116)'
-    linkBoxContact.style.background = 'rgba(86, 86, 253, .4)'
-    boxContact.forEach(div => {
-      div.style.background = 'rgba(255, 255, 255, .2)'
-    })
-    textBoxContact.forEach(anchor => {
-      anchor.style.color = 'rgb(13, 13, 13)'
-    })
-
-    frontFooter.style.background = 'rgba(255, 255, 255, .4)'
-    titleFooter.style.color = 'rgba(0, 0, 0, .7)'
-    spanFooter.style.color = '#FF5D59'
-    madeFooter.style.color = '#67158d'
-
-    theme = 'light'
-  } else if (theme === 'light') {
-    moon.style.opacity = '1'
-    span.style.transform = 'translate(0, 0)'
-    span.style.background = 'rgb(148, 148, 255)'
-    sun.style.opacity = '.5'
-    body.style.background = 'linear-gradient(rgb(2, 0, 19), rgb(1, 0, 10))'
-    navbar.style.background = 'rgba(255, 255, 255, .015)'
-    navbar.classList.remove('animate-blurItLight')
-    navbar.classList.add('animate-blurItDark')
-    childrensNavbar.forEach(anchor => {
-      anchor.classList.remove('animate-textLight')
-      anchor.classList.add('animate-textDark')
-    })
-    cardTheme.style.background = 'rgba(255, 255, 255, .04)'
-    cardTheme.classList.remove('animate-blurItLight')
-    cardTheme.classList.add('animate-blurItDark')
-    backdropNav.style.background = '#D069FF14'
-
-    profile.style.background = 'rgba(255, 255, 255, .015)'
-    profile.style.borderColor = '#8759FF24'
-    imgProfile.style.borderColor = 'rgb(86, 86, 253)'
-    titleProfile.style.color = 'rgb(186, 196, 255)'
-    subtitleProfile.style.color = '#8759FF'
-    textProfile.style.color = 'rgb(186, 196, 255)'
-    spanTitleProfile.style.color = 'rgb(125, 144, 255)'
-    spanTextProfile.style.color = 'rgb(186, 196, 255)'
-
-    projects.style.background = 'rgba(255, 255, 255, .015)'
-    projects.style.borderColor = '#8759FF24'
-    backTitleProjects.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
-    frontTitlteProjects.style.background = 'rgb(6, 4, 18)'
-    textTitleProjects.style.color = 'rgb(125, 144, 255)'
-    articleProjects.style.background = 'rgba(86, 86, 253, .15)'
-    articleProjects2.style.background = 'rgba(86, 86, 253, .15)'
-    articleTitleProjects.style.color = 'rgb(125, 144, 255)'
-    articleDescriptionProjects.style.color = 'rgb(186, 196, 255)'
-    articleTitleProjects2.style.color = 'rgb(125, 144, 255)'
-    articleDescriptionProjects2.style.color = 'rgb(186, 196, 255)'
-    boxTecProjects.style.background = 'rgba(86, 86, 253, .4)'
-    boxTecProjects2.style.background = 'rgba(86, 86, 253, .4)'
-
-    about.style.background = 'rgba(255, 255, 255, .015)'
-    about.style.borderColor = '#8759FF24'
-    titleBackAbout.style.background = 'rgba(86, 86, 253, .15)'
-    titleAbout.style.color = 'rgb(125, 144, 255)'
-    imageAbout.style.borderColor = '#FF5D59'
-    articleAbout.style.background = 'rgba(86, 86, 253, .15)'
-    textArticleAbout.style.color = 'rgb(186, 196, 255)'
-    spanArticleAbout.style.color = 'rgb(125, 144, 255)'
-    tecAbout.style.background = 'rgba(86, 86, 253, .15)'
-    tecBackAbout.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
-    tecFrontAbout.style.background = 'rgb(6, 4, 18)'
-    titleTecAbout.style.color = 'rgb(125, 144, 255)'
-    backTecAbout.style.background = '#D069FF14'
-    tecTitle.forEach(h2 => {
-      h2.style.background = 'linear-gradient(to right, rgb(86, 86, 253), #FF5D59)'
-      h2.style.backgroundClip = 'text'
-    })
-    tecTitle2.forEach(h2 => {
-      h2.style.background = 'linear-gradient(to right, #FF5D59, rgb(86, 86, 253))'
-      h2.style.backgroundClip = 'text'
-    })
-    svgGradientInitialA.style.stopColor = '#FF5D59'
-    svgGradientFinalA.style.stopColor = 'rgb(86, 86, 253)'
-    svgGradientInitialB.style.stopColor = 'rgb(86, 86, 253)'
-    svgGradientFinalB.style.stopColor = '#FF5D59'
-    svgMiddle.forEach(item => {
-      item.style.fill = '#fff'
-    })
-
-    contact.style.background = 'rgba(255, 255, 255, .015)'
-    contact.style.borderColor = '#8759FF24'
-    titleContact.style.color = 'rgb(186, 196, 255)'
-    subtitleContact.style.color = 'rgb(125, 144, 255)'
-    linkBoxContact.style.background = '#8759FF24'
-    boxContact.forEach(div => {
-      div.style.background = 'rgba(86, 86, 253, .15)'
-    })
-    textBoxContact.forEach(anchor => {
-      anchor.style.color = 'rgb(125, 144, 255)'
-    })
-
-    frontFooter.style.background = 'rgba(0, 0, 0, .9)'
-    titleFooter.style.color = '#8759FF'
-    spanFooter.style.color = '#FF5D59'
-    madeFooter.style.color = 'rgb(125, 144, 255)'
-
-    theme = 'dark'
-  }
-})
-</script>
+<HandleTheme />
 
 <script>
-  const navigateButton = document.querySelectorAll('header ul li a')
+  const navigateButton = document.querySelectorAll<HTMLElement>('header ul li a')
   navigateButton.forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       e.preventDefault()
