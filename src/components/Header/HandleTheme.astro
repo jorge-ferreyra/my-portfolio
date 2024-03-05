@@ -5,7 +5,19 @@
 
   const body = document.querySelector('body')
   const navbar = document.getElementById('navbar')
-  const childrensNavbar = document.querySelectorAll('#navigate-anchor')
+
+  const childrenNavbarIntro = document.getElementById('navigate-anchor-intro')
+  const childrenNavbarProjects = document.getElementById('navigate-anchor-projects')
+  const childrenNavbarAbout = document.getElementById('navigate-anchor-about')
+  const childrenNavbarContact = document.getElementById('navigate-anchor-contact')
+
+  const childrensNavBar = [
+    childrenNavbarIntro,
+    childrenNavbarProjects,
+    childrenNavbarAbout,
+    childrenNavbarContact
+  ]
+
   const cardTheme = document.getElementById('card-theme')
   const moonFilled = document.getElementById('moon-filled')
   const moon = document.getElementById('moon')
@@ -62,8 +74,29 @@
   const titleContact = document.getElementById('title-contact')
   const subtitleContact = document.getElementById('subtitle-contact')
   const linkBoxContact = document.getElementById('link-box-contact')
-  const boxContact = document.querySelectorAll<HTMLElement>('#box-contact')
-  const textBoxContact = document.querySelectorAll<HTMLElement>('#text-box-contact')
+
+  const boxContactGmail = document.getElementById('box-contact-gmail')
+  const boxContactOutlook = document.getElementById('box-contact-outlook')
+  const boxContactGithub = document.getElementById('box-contact-github')
+  const boxContactLinkedin = document.getElementById('box-contact-linkedin')
+
+  const boxContact = [
+    boxContactGmail,
+    boxContactOutlook,
+    boxContactGithub,
+    boxContactLinkedin,
+  ]
+  const textBoxContactGmail = document.getElementById('text-box-contact-gmail')
+  const textBoxContactOutlook = document.getElementById('text-box-contact-outlook')
+  const textBoxContactGithub = document.getElementById('text-box-contact-github')
+  const textBoxContactLinkedin = document.getElementById('text-box-contact-linkedin')
+  
+  const textBoxContact = [
+    textBoxContactGmail,
+    textBoxContactOutlook,
+    textBoxContactGithub,
+    textBoxContactLinkedin
+  ]
   
   const footer = document.getElementById('section-footer')
   const frontFooter = document.getElementById('front-footer')
@@ -238,10 +271,12 @@
       navbar.style.background = 'rgba(0, 0, 0, .5)'
       navbar.classList.remove('animate-blurItDark')
       navbar.classList.add('animate-blurItLight')
-      childrensNavbar.forEach(anchor => {
-        anchor.classList.remove('animate-textDark')
-        anchor.classList.add('animate-textLight')
+
+      childrensNavBar.forEach(item => {
+        item.classList.remove('animate-textDark')
+        item.classList.add('animate-textLight')
       })
+
       cardTheme.style.background = 'rgba(0, 0, 0, .5)'
       cardTheme.classList.remove('animate-blurItDark')
       cardTheme.classList.add('animate-blurItLight')
@@ -345,10 +380,12 @@
       navbar.style.background = 'rgba(255, 255, 255, .015)'
       navbar.classList.remove('animate-blurItLight')
       navbar.classList.add('animate-blurItDark')
-      childrensNavbar.forEach(anchor => {
-        anchor.classList.remove('animate-textLight')
-        anchor.classList.add('animate-textDark')
+
+      childrensNavBar.forEach(item => {
+        item.classList.remove('animate-textLight')
+        item.classList.add('animate-textDark')
       })
+
       cardTheme.style.background = 'rgba(255, 255, 255, .04)'
       cardTheme.classList.remove('animate-blurItLight')
       cardTheme.classList.add('animate-blurItDark')

@@ -1,7 +1,7 @@
 ---
-import { Image } from 'astro:assets'
+// import { Image } from 'astro:assets'
 import ProfileImageWeb from '../../img/profile-img.webp'
 ---
 
-<Image id="image-profile" class="w-[100%] rounded-[50%] border-solid border-[1px]" src={ProfileImageWeb} alt="It's me" loading="eager" />
+<img fetchpriority="high" id="image-profile" class="w-[100%] h-[100%] rounded-[50%] border-solid border-[1px]" src="profile-img.webp" alt="It's me" loading="eager" />
 
