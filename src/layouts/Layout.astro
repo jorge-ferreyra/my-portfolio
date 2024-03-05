@@ -10,16 +10,21 @@ const { title } = Astro.props;
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Este es mi portfolio en donde presento mis proyectos y mis habilidades. Soy un estudiante de programación en busca del desarrollo personal y profesional" />
+		<meta name="robots" content="index, follow">
+		<meta name="theme-color" content="rgb(2, 0, 19)">
+
 		<meta name="image" property="og:image" content="Preview.png">
+		<meta property="og:title" content="Portfolio de Jorge Ferreyra" >
+		<meta property="og:description" content="Este es mi portfolio en donde presento mis proyectos y mis habilidades. Soy un estudiante de programación en busca del desarrollo personal y profesional" >
+
 		<link id="icon-web" rel="icon" href='code-dots.svg'>
 		<style>
 			@import 'tailwindcss/base';
 			@import 'tailwindcss/components';
 			@import 'tailwindcss/utilities';
-	</style>
+		</style>
 		<title>{title}</title>
 	</head>
 	<body class="w-full h-[4000px] relative
